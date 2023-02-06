@@ -17,11 +17,26 @@ const d = pr.wrapRawDictionary
 export const $: mglossary.TGlossary = {
     'imports': d({
         "common": "glo-pareto-common",
-        "tc": "glo-astn-tokenconsumer",
+        //"tc": "glo-astn-tokenconsumer",
     }),
     'parameters': d({}),
     'templates': d({}),
     'types': types({
+        "Error": group({
+            "type": member(taggedUnion({
+                "unterminated block comment": group({}),
+                "found dangling slash at the end of the text": group({}),
+                "unterminated string": group({}),
+                // | ["found dangling slash", null]
+                // | ["expected hexadecimal digit", {
+                //     readonly "found": string
+                // }]
+                // | ["expected special character after escape slash", {
+                //     readonly "found": string
+                // }]  
+            })),
+            "location": member(reference("LocationInfo")),
+        }),
         "LineLocation": group({
             //first line in document has value 1
             "line": member(number()),
@@ -32,50 +47,54 @@ export const $: mglossary.TGlossary = {
             "absolutePosition": member(number()),
             "lineLocation": member(reference("LineLocation"))
         }),
-        "Pretoken": taggedUnion({
-            "header start": group({
-                "range": member(reference("Range")),
-            }),
-            "block comment begin": group({
-                "range": member(reference("Range")),
-            }),
-            "block comment end": group({
-                "range": member(reference("Range")),
-            }),
-            "line comment begin": group({
-                "range": member(reference("Range")),
-            }),
-            "line comment end": group({
-                "location": member(reference("LocationInfo")),
-            }),
-            "newline": group({
-                "range": member(reference("Range")) //can be a range because it can be multiple characters (/r/n)
-            }),
-            "structural": group({
-                "type": member(reference("tc", "StructuralTokenType")),
-                "range": member(reference("Range")),
-            }),
-            "wrapped string begin": group({
-                "type": member(reference("tc", "WrappedStringType")),
-                "range": member(reference("Range")),
-            }),
-            "wrapped string end": group({
-                "range": member(reference("Range")),
-                //     wrapper: string | null
-            }),
-            "snippet": string(),
-            "non wrapped string begin": group({
-                "location": member(reference("LocationInfo")),
-            }),
-            "non wrapped string end": group({
-                "location": member(reference("LocationInfo")),
-            }),
-            "whitespace begin": group({
-                "location": member(reference("LocationInfo")),
-            }),
-            "whitespace end": group({
-                "location": member(reference("LocationInfo")),
-            }),
+        "Pretoken": group({
+            "type": member(taggedUnion({
+                "header start": group({
+                }),
+                "block comment begin": group({
+                }),
+                "block comment end": group({
+                }),
+                "line comment begin": group({
+                }),
+                "line comment end": group({
+                }),
+                "newline": group({
+                }),
+                "structural": group({
+                    //"type": member(reference("tc", "StructuralTokenType")),
+                }),
+                "wrapped string begin": group({
+                    //"type": member(reference("tc", "WrappedStringType")),
+                }),
+                "wrapped string end": group({
+                    //     wrapper: string | null
+                }),
+                "snippet": string(),
+                "non wrapped string begin": group({
+                }),
+                "non wrapped string end": group({
+                }),
+                "whitespace begin": group({
+                }),
+                "whitespace end": group({
+                }),
+            })),
+            "location": member(reference("LocationInfo"))
+        }),
+        "PretokenizerConfigurationData": group({
+            "absolutePositionStart": member(number()),
+            "firstLine": member(number()),
+            "firstCharacter": member(number()),
+            "whitespace": member(group({
+
+                "carriage return": member(number()),
+                "line feed": member(number()),
+                "space": member(number()),
+                "tab": member(number()),
+
+            })),
+
         }),
         "Range": group({
             "start": member(reference("LocationInfo")),
@@ -102,6 +121,7 @@ export const $: mglossary.TGlossary = {
         "PretokenHandler": method(typeReference("Pretoken"))
     }),
     'functions': d({
+        "OnError": func(typeReference("Error"), null, null, null),
         "Pretokenize": func(typeReference("common", "Null"), null, interfaceReference("PretokenHandler"), inf(interfaceReference("StringStreamConsumer")))
     }),
 }

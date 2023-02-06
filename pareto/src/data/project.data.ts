@@ -13,7 +13,7 @@ export const $: mproject.TProject = {
 
     'pubdependencies': d({
         "glo-pareto-common": {},
-        "glo-astn-tokenconsumer": {},
+        //"glo-astn-tokenconsumer": {},
     }),
     'type': ['resource', {
         'definition': api,

@@ -26,7 +26,9 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             //"common": "glo-pareto-common",
         }),
         'algorithms': d({
-            "createPretokenizer": algorithm(definitionReference("Pretokenize"))
+            "createPretokenizer": algorithm(definitionReference("Pretokenize"), constructor(typeReference("PretokenizerConfigurationData"), {
+                "onError": definitionReference("OnError"),
+            }))
         })
     },
 }

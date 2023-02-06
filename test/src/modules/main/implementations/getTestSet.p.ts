@@ -10,44 +10,75 @@ import * as mtest from "lib-pareto-test"
 import * as mfs from "res-pareto-filesystem"
 import * as mfsLib from "lib-pareto-filesystem"
 
-export const createGetTestset: api.CgetTestSet = ($) => {
+export const $$: api.CgetTestSet = ($) => {
 
-    pl.logDebugMessage(`TD> ${$.testDirectory}`)
+    // pl.logDebugMessage(`TD> ${$.testDirectory}`)
 
-    mfsLib.f_createReadDirectoryOrAbort({
-        onError: ($) => {
+    // mfsLib.f_createReadDirectoryOrAbort({
+    //     onError: ($) => {
 
-        },
-        readDirectory: mfs.f_readDirectory
-    })({
-        path: [$.testDirectory, "errors"],
-    })._execute(($) => {
-        $.forEach(() => true, ($, key) => {
-            pl.logDebugMessage(key)
-        })
-    })
-    // fs.f_readDirectory({
-    //     path: [ $.testDirectory, "errors" ],
+    //     },
+    //     readDirectory: mfs.f_readDirectory
+    // })({
+    //     path: [$.testDirectory, "errors"],
     // })._execute(($) => {
-
+    //     $.forEach(() => true, ($, key) => {
+    //         pl.logDebugMessage(key)
+    //     })
     // })
+    // // fs.f_readDirectory({
+    // //     path: [ $.testDirectory, "errors" ],
+    // // })._execute(($) => {
 
-    const pt = pub.$a.createPretokenizer(
+    // // })
+
+    // const pt = pub.$a.createPretokenizer(
+    //     {
+    //         consumer: ($) => {
+
+    //         },
+    //         onError: ($) => {
+
+    //         },
+    //         toArrayOfCharacters: ($) => {
+    //             pl.panic("!!!")
+    //         }
+    //     }
+    // )
+
+    // pt("FOO")
+
+    const tokenizer = pub.$a.createPretokenizer(
         {
-            consumer: ($) => {
-
+            'absolutePositionStart': 0,
+            'firstCharacter': 1,
+            'firstLine': 1,
+            'whitespace': {
+                'tab': 0x09,               // \t
+                'line feed': 0x0A,         // \n
+                'carriage return': 0x0D,   // \r
+                'space': 0x20,             //
             },
+        },
+        {
             onError: ($) => {
-
-            },
-            toArrayOfCharacters: ($) => {
-                pl.panic("!!!")
+                pl.logDebugMessage("ERROR")
             }
         }
+    )(
+        null,
+        ($) => {
+            // switch ($[0]) {
+            //     case '': 
+            //         pl.cc($[1], ($) => {
+
+            //         })
+            //         break
+            //     default: pl.au($[0])
+            // }
+        }
     )
-
-    pt("FOO")
-
+    tokenizer.onData("FOOBAR")
 
     const builder = pm.createUnsafeDictionaryBuilder<mtest.TTestElement>()
     function createTest(name: string, actual: string, expected: string) {

@@ -7,22 +7,21 @@ import {
     reference,
     boolean,
     typeReference,
-    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, method, number
+    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, method, number, type
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
 import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 
 const d = pr.wrapRawDictionary
 
-export const $: mglossary.TGlossary = {
+export const $: mglossary.T.Glossary<string> = {
     'imports': d({
         "common": "glo-pareto-common",
         //"tc": "glo-astn-tokenconsumer",
     }),
     'parameters': d({}),
-    'templates': d({}),
-    'types': types({
-        "Error": group({
+    'types': d({
+        "Error": type( group({
             "type": member(taggedUnion({
                 "unterminated block comment": group({}),
                 "found dangling slash at the end of the text": group({}),
@@ -36,18 +35,18 @@ export const $: mglossary.TGlossary = {
                 // }]  
             })),
             "location": member(reference("LocationInfo")),
-        }),
-        "LineLocation": group({
+        })),
+        "LineLocation": type( group({
             //first line in document has value 1
             "line": member(number()),
             //first character on a line has value 1
             "character": member(number()),
-        }),
-        "LocationInfo": group({
+        })),
+        "LocationInfo": type( group({
             "absolutePosition": member(number()),
             "lineLocation": member(reference("LineLocation"))
-        }),
-        "Pretoken": group({
+        })),
+        "Pretoken": type( group({
             "type": member(taggedUnion({
                 "header start": group({
                 }),
@@ -81,8 +80,8 @@ export const $: mglossary.TGlossary = {
                 }),
             })),
             "location": member(reference("LocationInfo"))
-        }),
-        "PretokenizerConfigurationData": group({
+        })),
+        "PretokenizerConfigurationData": type( group({
             "absolutePositionStart": member(number()),
             "firstLine": member(number()),
             "firstCharacter": member(number()),
@@ -95,13 +94,13 @@ export const $: mglossary.TGlossary = {
 
             })),
 
-        }),
-        "Range": group({
+        })),
+        "Range": type( group({
             "start": member(reference("LocationInfo")),
             "length": member(number()),
             "size": member(reference("RangeSize")),
-        }),
-        "RangeSize": taggedUnion({
+        })),
+        "RangeSize": type( taggedUnion({
             "singe line": group({
                 "column offset": member(number()),
             }),
@@ -109,7 +108,7 @@ export const $: mglossary.TGlossary = {
                 "line offset": member(number()),
                 "column": member(number()),
             }),
-        }),
+        })),
     }),
     'interfaces': d({
         "StringStreamConsumer": ['group', { //REPLACE BY THE STRINGSTREAMCONSUMER IN GLO-PARETO-COMMON

@@ -2,149 +2,246 @@ import * as pt from 'pareto-core-types'
 
 import * as mcommon from "glo-pareto-common"
 
-export namespace GError {
+export namespace T {
     
-    export namespace Ptype {
+    export namespace Error {
         
-        export namespace Ofound__dangling__slash__at__the__end__of__the__text {}
-        export type Ofound__dangling__slash__at__the__end__of__the__text = {}
+        export type location = T.LocationInfo
         
-        export namespace Ounterminated__block__comment {}
-        export type Ounterminated__block__comment = {}
+        export namespace _ltype {
+            
+            export namespace found__dangling__slash__at__the__end__of__the__text {}
+            
+            export type found__dangling__slash__at__the__end__of__the__text = {}
+            
+            export namespace unterminated__block__comment {}
+            
+            export type unterminated__block__comment = {}
+            
+            export namespace unterminated__string {}
+            
+            export type unterminated__string = {}
+        }
         
-        export namespace Ounterminated__string {}
-        export type Ounterminated__string = {}
-    }
-    export type Ptype = 
-        | ['found dangling slash at the end of the text', Ptype.Ofound__dangling__slash__at__the__end__of__the__text]
-        | ['unterminated block comment', Ptype.Ounterminated__block__comment]
-        | ['unterminated string', Ptype.Ounterminated__string]
-}
-export type GError = {
-    readonly 'location': ULocationInfo
-    readonly 'type': GError.Ptype
-}
-export type UError = GError
-
-export namespace GLineLocation {}
-export type GLineLocation = {
-    readonly 'character': number
-    readonly 'line': number
-}
-export type ULineLocation = GLineLocation
-
-export namespace GLocationInfo {}
-export type GLocationInfo = {
-    readonly 'absolutePosition': number
-    readonly 'lineLocation': ULineLocation
-}
-export type ULocationInfo = GLocationInfo
-
-export namespace GPretoken {
-    
-    export namespace Ptype {
-        
-        export namespace Oblock__comment__begin {}
-        export type Oblock__comment__begin = {}
-        
-        export namespace Oblock__comment__end {}
-        export type Oblock__comment__end = {}
-        
-        export namespace Oheader__start {}
-        export type Oheader__start = {}
-        
-        export namespace Oline__comment__begin {}
-        export type Oline__comment__begin = {}
-        
-        export namespace Oline__comment__end {}
-        export type Oline__comment__end = {}
-        
-        export namespace Onewline {}
-        export type Onewline = {}
-        
-        export namespace Onon__wrapped__string__begin {}
-        export type Onon__wrapped__string__begin = {}
-        
-        export namespace Onon__wrapped__string__end {}
-        export type Onon__wrapped__string__end = {}
-        
-        export namespace Ostructural {}
-        export type Ostructural = {}
-        
-        export namespace Owhitespace__begin {}
-        export type Owhitespace__begin = {}
-        
-        export namespace Owhitespace__end {}
-        export type Owhitespace__end = {}
-        
-        export namespace Owrapped__string__begin {}
-        export type Owrapped__string__begin = {}
-        
-        export namespace Owrapped__string__end {}
-        export type Owrapped__string__end = {}
-    }
-    export type Ptype = 
-        | ['block comment begin', Ptype.Oblock__comment__begin]
-        | ['block comment end', Ptype.Oblock__comment__end]
-        | ['header start', Ptype.Oheader__start]
-        | ['line comment begin', Ptype.Oline__comment__begin]
-        | ['line comment end', Ptype.Oline__comment__end]
-        | ['newline', Ptype.Onewline]
-        | ['non wrapped string begin', Ptype.Onon__wrapped__string__begin]
-        | ['non wrapped string end', Ptype.Onon__wrapped__string__end]
-        | ['snippet', string]
-        | ['structural', Ptype.Ostructural]
-        | ['whitespace begin', Ptype.Owhitespace__begin]
-        | ['whitespace end', Ptype.Owhitespace__end]
-        | ['wrapped string begin', Ptype.Owrapped__string__begin]
-        | ['wrapped string end', Ptype.Owrapped__string__end]
-}
-export type GPretoken = {
-    readonly 'location': ULocationInfo
-    readonly 'type': GPretoken.Ptype
-}
-export type UPretoken = GPretoken
-
-export namespace GPretokenizerConfigurationData {
-    
-    export namespace Pwhitespace {}
-    export type Pwhitespace = {
-        readonly 'carriage return': number
-        readonly 'line feed': number
-        readonly 'space': number
-        readonly 'tab': number
-    }
-}
-export type GPretokenizerConfigurationData = {
-    readonly 'absolutePositionStart': number
-    readonly 'firstCharacter': number
-    readonly 'firstLine': number
-    readonly 'whitespace': GPretokenizerConfigurationData.Pwhitespace
-}
-export type UPretokenizerConfigurationData = GPretokenizerConfigurationData
-
-export namespace GRange {}
-export type GRange = {
-    readonly 'length': number
-    readonly 'size': URangeSize
-    readonly 'start': ULocationInfo
-}
-export type URange = GRange
-
-export namespace GRangeSize {
-    
-    export namespace Omultiline {}
-    export type Omultiline = {
-        readonly 'column': number
-        readonly 'line offset': number
+        export type _ltype = 
+            | ['found dangling slash at the end of the text', {}]
+            | ['unterminated block comment', {}]
+            | ['unterminated string', {}]
     }
     
-    export namespace Osinge__line {}
-    export type Osinge__line = {
-        readonly 'column offset': number
+    export type Error = {
+        readonly 'location': T.LocationInfo
+        readonly 'type': 
+            | ['found dangling slash at the end of the text', {}]
+            | ['unterminated block comment', {}]
+            | ['unterminated string', {}]
     }
+    
+    export namespace LineLocation {
+        
+        export type character = number
+        
+        export type line = number
+    }
+    
+    export type LineLocation = {
+        readonly 'character': number
+        readonly 'line': number
+    }
+    
+    export namespace LocationInfo {
+        
+        export type absolutePosition = number
+        
+        export type lineLocation = T.LineLocation
+    }
+    
+    export type LocationInfo = {
+        readonly 'absolutePosition': number
+        readonly 'lineLocation': T.LineLocation
+    }
+    
+    export namespace Pretoken {
+        
+        export type location = T.LocationInfo
+        
+        export namespace _ltype {
+            
+            export namespace block__comment__begin {}
+            
+            export type block__comment__begin = {}
+            
+            export namespace block__comment__end {}
+            
+            export type block__comment__end = {}
+            
+            export namespace header__start {}
+            
+            export type header__start = {}
+            
+            export namespace line__comment__begin {}
+            
+            export type line__comment__begin = {}
+            
+            export namespace line__comment__end {}
+            
+            export type line__comment__end = {}
+            
+            export namespace newline {}
+            
+            export type newline = {}
+            
+            export namespace non__wrapped__string__begin {}
+            
+            export type non__wrapped__string__begin = {}
+            
+            export namespace non__wrapped__string__end {}
+            
+            export type non__wrapped__string__end = {}
+            
+            export type snippet = string
+            
+            export namespace structural {}
+            
+            export type structural = {}
+            
+            export namespace whitespace__begin {}
+            
+            export type whitespace__begin = {}
+            
+            export namespace whitespace__end {}
+            
+            export type whitespace__end = {}
+            
+            export namespace wrapped__string__begin {}
+            
+            export type wrapped__string__begin = {}
+            
+            export namespace wrapped__string__end {}
+            
+            export type wrapped__string__end = {}
+        }
+        
+        export type _ltype = 
+            | ['block comment begin', {}]
+            | ['block comment end', {}]
+            | ['header start', {}]
+            | ['line comment begin', {}]
+            | ['line comment end', {}]
+            | ['newline', {}]
+            | ['non wrapped string begin', {}]
+            | ['non wrapped string end', {}]
+            | ['snippet', string]
+            | ['structural', {}]
+            | ['whitespace begin', {}]
+            | ['whitespace end', {}]
+            | ['wrapped string begin', {}]
+            | ['wrapped string end', {}]
+    }
+    
+    export type Pretoken = {
+        readonly 'location': T.LocationInfo
+        readonly 'type': 
+            | ['block comment begin', {}]
+            | ['block comment end', {}]
+            | ['header start', {}]
+            | ['line comment begin', {}]
+            | ['line comment end', {}]
+            | ['newline', {}]
+            | ['non wrapped string begin', {}]
+            | ['non wrapped string end', {}]
+            | ['snippet', string]
+            | ['structural', {}]
+            | ['whitespace begin', {}]
+            | ['whitespace end', {}]
+            | ['wrapped string begin', {}]
+            | ['wrapped string end', {}]
+    }
+    
+    export namespace PretokenizerConfigurationData {
+        
+        export type absolutePositionStart = number
+        
+        export type firstCharacter = number
+        
+        export type firstLine = number
+        
+        export namespace whitespace {
+            
+            export type carriage__return = number
+            
+            export type line__feed = number
+            
+            export type space = number
+            
+            export type tab = number
+        }
+        
+        export type whitespace = {
+            readonly 'carriage return': number
+            readonly 'line feed': number
+            readonly 'space': number
+            readonly 'tab': number
+        }
+    }
+    
+    export type PretokenizerConfigurationData = {
+        readonly 'absolutePositionStart': number
+        readonly 'firstCharacter': number
+        readonly 'firstLine': number
+        readonly 'whitespace': {
+            readonly 'carriage return': number
+            readonly 'line feed': number
+            readonly 'space': number
+            readonly 'tab': number
+        }
+    }
+    
+    export namespace Range {
+        
+        export type length = number
+        
+        export type size = T.RangeSize
+        
+        export type start = T.LocationInfo
+    }
+    
+    export type Range = {
+        readonly 'length': number
+        readonly 'size': T.RangeSize
+        readonly 'start': T.LocationInfo
+    }
+    
+    export namespace RangeSize {
+        
+        export namespace multiline {
+            
+            export type column = number
+            
+            export type line__offset = number
+        }
+        
+        export type multiline = {
+            readonly 'column': number
+            readonly 'line offset': number
+        }
+        
+        export namespace singe__line {
+            
+            export type column__offset = number
+        }
+        
+        export type singe__line = {
+            readonly 'column offset': number
+        }
+    }
+    
+    export type RangeSize = 
+        | ['multiline', {
+            readonly 'column': number
+            readonly 'line offset': number
+        }]
+        | ['singe line', {
+            readonly 'column offset': number
+        }]
 }
-export type GRangeSize = 
-    | ['multiline', GRangeSize.Omultiline]
-    | ['singe line', GRangeSize.Osinge__line]
-export type URangeSize = GRangeSize

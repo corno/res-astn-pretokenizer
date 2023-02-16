@@ -11,17 +11,25 @@ export const $: mproject.T.Project = {
     'description': "lowlevel ASTN Tokenizer",
     'license': "ISC",
 
-    'pubdependencies': d({
+    'dependencies': d({
         "glo-pareto-common": {},
         //"glo-astn-tokenconsumer": {},
     }),
     'type': ['resource', {
         'definition': api,
+        'nativeDependencies': d({}),
         'devDependencies': d({
         }),
         'test': {
             'dependencies': d({
             }),
+            'glossary': {
+                'functions': d({}),
+                'imports': d({}),
+                'parameters': d({}),
+                'types': d({}),
+                'interfaces': d({}),
+            },
         }
     }],
 }

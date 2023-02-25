@@ -1,11 +1,11 @@
 import * as pt from 'pareto-core-types'
 
-import * as glo from "./glossary"
+import * as gglo from "./glossary"
 
 
-export type CcreatePretokenizer = ($: glo.T.PretokenizerConfigurationData, $d: {
-    readonly 'onError': glo.FOnError
-}) => glo.FPretokenize
+export type CcreatePretokenizer = ($: gglo.T.PretokenizerConfigurationData, $d: {
+    readonly 'onError': gglo.FOnError
+}) => gglo.FPretokenize
 
 export type API = {
     createPretokenizer: CcreatePretokenizer

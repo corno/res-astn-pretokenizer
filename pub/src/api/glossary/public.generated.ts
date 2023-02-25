@@ -2,15 +2,15 @@ import * as pt from 'pareto-core-types'
 
 import { T   } from './types.generated'
 
-import * as mcommon from "glo-pareto-common"
+import * as gcommon from "glo-pareto-common"
 
 export type IPretokenHandler = ($: T.Pretoken, ) => void
 
 export type IStringStreamConsumer = {
-    'onData': ($: mcommon.T.String, ) => void
+    'onData': ($: gcommon.T.String, ) => void
     'onEnd': () => void
 }
 
 export type FOnError = ($: T.Error,) => void
 
-export type FPretokenize = ($: mcommon.T.Null, $i: IPretokenHandler,) => IStringStreamConsumer
+export type FPretokenize = ($: gcommon.T.Null, $i: IPretokenHandler,) => IStringStreamConsumer

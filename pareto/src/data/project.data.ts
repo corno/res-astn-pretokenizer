@@ -9,7 +9,7 @@ import { $ as api } from "./api.data"
 export const $: mproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "lowlevel ASTN Tokenizer",
-    'license': "ISC",
+    'license': "TBD",
 
     'dependencies': d({
         "glo-pareto-common": {},

@@ -12,29 +12,29 @@ export namespace T {
             
             export namespace found__dangling__slash__at__the__end__of__the__text {}
             
-            export type found__dangling__slash__at__the__end__of__the__text = {}
+            export type found__dangling__slash__at__the__end__of__the__text = null
             
             export namespace unterminated__block__comment {}
             
-            export type unterminated__block__comment = {}
+            export type unterminated__block__comment = null
             
             export namespace unterminated__string {}
             
-            export type unterminated__string = {}
+            export type unterminated__string = null
         }
         
         export type _ltype = 
-            | ['found dangling slash at the end of the text', {}]
-            | ['unterminated block comment', {}]
-            | ['unterminated string', {}]
+            | ['found dangling slash at the end of the text', null]
+            | ['unterminated block comment', null]
+            | ['unterminated string', null]
     }
     
     export type Error = {
         readonly 'location': T.LocationInfo
         readonly 'type': 
-            | ['found dangling slash at the end of the text', {}]
-            | ['unterminated block comment', {}]
-            | ['unterminated string', {}]
+            | ['found dangling slash at the end of the text', null]
+            | ['unterminated block comment', null]
+            | ['unterminated string', null]
     }
     
     export namespace LineLocation {
@@ -69,93 +69,93 @@ export namespace T {
             
             export namespace block__comment__begin {}
             
-            export type block__comment__begin = {}
+            export type block__comment__begin = null
             
             export namespace block__comment__end {}
             
-            export type block__comment__end = {}
+            export type block__comment__end = null
             
             export namespace header__start {}
             
-            export type header__start = {}
+            export type header__start = null
             
             export namespace line__comment__begin {}
             
-            export type line__comment__begin = {}
+            export type line__comment__begin = null
             
             export namespace line__comment__end {}
             
-            export type line__comment__end = {}
+            export type line__comment__end = null
             
             export namespace newline {}
             
-            export type newline = {}
+            export type newline = null
             
             export namespace non__wrapped__string__begin {}
             
-            export type non__wrapped__string__begin = {}
+            export type non__wrapped__string__begin = null
             
             export namespace non__wrapped__string__end {}
             
-            export type non__wrapped__string__end = {}
+            export type non__wrapped__string__end = null
             
             export type snippet = string
             
             export namespace structural {}
             
-            export type structural = {}
+            export type structural = null
             
             export namespace whitespace__begin {}
             
-            export type whitespace__begin = {}
+            export type whitespace__begin = null
             
             export namespace whitespace__end {}
             
-            export type whitespace__end = {}
+            export type whitespace__end = null
             
             export namespace wrapped__string__begin {}
             
-            export type wrapped__string__begin = {}
+            export type wrapped__string__begin = null
             
             export namespace wrapped__string__end {}
             
-            export type wrapped__string__end = {}
+            export type wrapped__string__end = null
         }
         
         export type _ltype = 
-            | ['block comment begin', {}]
-            | ['block comment end', {}]
-            | ['header start', {}]
-            | ['line comment begin', {}]
-            | ['line comment end', {}]
-            | ['newline', {}]
-            | ['non wrapped string begin', {}]
-            | ['non wrapped string end', {}]
+            | ['block comment begin', null]
+            | ['block comment end', null]
+            | ['header start', null]
+            | ['line comment begin', null]
+            | ['line comment end', null]
+            | ['newline', null]
+            | ['non wrapped string begin', null]
+            | ['non wrapped string end', null]
             | ['snippet', string]
-            | ['structural', {}]
-            | ['whitespace begin', {}]
-            | ['whitespace end', {}]
-            | ['wrapped string begin', {}]
-            | ['wrapped string end', {}]
+            | ['structural', null]
+            | ['whitespace begin', null]
+            | ['whitespace end', null]
+            | ['wrapped string begin', null]
+            | ['wrapped string end', null]
     }
     
     export type Pretoken = {
         readonly 'location': T.LocationInfo
         readonly 'type': 
-            | ['block comment begin', {}]
-            | ['block comment end', {}]
-            | ['header start', {}]
-            | ['line comment begin', {}]
-            | ['line comment end', {}]
-            | ['newline', {}]
-            | ['non wrapped string begin', {}]
-            | ['non wrapped string end', {}]
+            | ['block comment begin', null]
+            | ['block comment end', null]
+            | ['header start', null]
+            | ['line comment begin', null]
+            | ['line comment end', null]
+            | ['newline', null]
+            | ['non wrapped string begin', null]
+            | ['non wrapped string end', null]
             | ['snippet', string]
-            | ['structural', {}]
-            | ['whitespace begin', {}]
-            | ['whitespace end', {}]
-            | ['wrapped string begin', {}]
-            | ['wrapped string end', {}]
+            | ['structural', null]
+            | ['whitespace begin', null]
+            | ['whitespace end', null]
+            | ['wrapped string begin', null]
+            | ['wrapped string end', null]
     }
     
     export namespace PretokenizerConfigurationData {

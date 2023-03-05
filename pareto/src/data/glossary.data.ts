@@ -7,7 +7,7 @@ import {
     reference,
     boolean,
     typeReference,
-    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, method, number, type
+    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, number, type
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -40,7 +40,7 @@ export const $: mglossary.T.Glossary<string> = {
         })),
         "LocationInfo": type( group({
             "absolutePosition": member(number()),
-            "lineLocation": member(reference("LineLocation"))
+            "lineLocation": member(reference("LineLocation")),
         })),
         "Pretoken": type( group({
             "type": member(taggedUnion({
@@ -75,7 +75,7 @@ export const $: mglossary.T.Glossary<string> = {
                 "whitespace end": group({
                 }),
             })),
-            "location": member(reference("LocationInfo"))
+            "location": member(reference("LocationInfo")),
         })),
         "PretokenizerConfigurationData": type( group({
             "absolutePositionStart": member(number()),
@@ -106,17 +106,18 @@ export const $: mglossary.T.Glossary<string> = {
             }),
         })),
     }),
+    'builders': d({}),
     'interfaces': d({
-        "StringStreamConsumer": ['group', { //REPLACE BY THE STRINGSTREAMCONSUMER IN GLO-PARETO-COMMON
-            'members': d({
-                "onData": method(typeReference("common", "String")),
-                "onEnd": method(null),
-            }),
-        }],
-        "PretokenHandler": method(typeReference("Pretoken"))
+        // "StringStreamConsumer": ['group', { //REPLACE BY THE STRINGSTREAMCONSUMER IN GLO-PARETO-COMMON
+        //     'members': d({
+        //         "onData": method(typeReference("common", "String")),
+        //         "onEnd": method(null),
+        //     }),
+        // }],
+        // "PretokenHandler": method(typeReference("Pretoken")),
     }),
     'functions': d({
         "OnError": func(typeReference("Error"), null, null, null),
-        "Pretokenize": func(typeReference("common", "Null"), null, interfaceReference("PretokenHandler"), inf(interfaceReference("StringStreamConsumer")))
+        //"Pretokenize": func(typeReference("common", "Null"), null, interfaceReference("PretokenHandler"), inf(interfaceReference("StringStreamConsumer"))),
     }),
 }

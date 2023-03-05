@@ -9,6 +9,6 @@ export const $: gapi.T.API<pd.SourceLocation> = {
     'algorithms': d({
         "createPretokenizer": algorithm(functionReference("this", {}, "Pretokenize"), constructor(typeReference("this", {}, "PretokenizerConfigurationData"), {
             "onError": functionReference("this", {}, "OnError"),
-        }))
-    })
+        })),
+    }),
 }

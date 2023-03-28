@@ -1,14 +1,16 @@
 import * as pd from 'pareto-core-data'
 
-import { functionReference, constructor, algorithm, typeReference } from "lib-pareto-typescript-project/dist/submodules/api/shorthands"
+import { algorithm, sfunction, dependent, data, procedure } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
 
-import * as gapi from "lib-pareto-typescript-project/dist/submodules/api"
+import * as g_project from "lib-pareto-typescript-project/dist/submodules/project"
 const d = pd.d
 
-export const $: gapi.T.API<pd.SourceLocation> = {
+export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
-        "createPretokenizer": algorithm(functionReference("this", {}, "Pretokenize"), constructor(typeReference("this", {}, "PretokenizerConfigurationData"), {
-            "onError": functionReference("this", {}, "OnError"),
+        "createPretokenizer": algorithm(sfunction("this", {}, "Pretokenize"), {}, dependent(data("this", {}, "PretokenizerConfigurationData"), {
+            "onError": procedure("this", {}, "OnError"),
+        }, {
+            
         })),
     }),
 }

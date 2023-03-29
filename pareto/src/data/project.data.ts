@@ -36,21 +36,40 @@ export const $: mproject.T.Project<pd.SourceLocation> = {
                 }),
             }
         },
-        'nativeDependencies': d({}),
-        'devDependencies': d({
-        }),
+        'temp': {
+            'nativeDependencies': d({}),
+            'devDependencies': d({
+            }),
+        },
         'test': {
             'dependencies': d({
             }),
-            'glossary': {
-                'parameters': d({}),
-                'root': {
-                    'namespaces': d({}),
-                    'types': d({}),
+            'definition': {
+                'glossary': {
+                    'root': {
+                        'parameters': d({}),
+                        'imports': d({}),
+                        'root': {
+                            'namespaces': d({}),
+                            'types': d({}),
+                        },
+                        'asynchronous': {
+                            'interfaces': d({}),
+                            'algorithms': d({}),
+                        },
+                        'synchronous': {
+                            'interfaces': d({}),
+                            'algorithms': d({}),
+                        },
+                    },
+                    'imports': d({}),
                 },
-                'builders': d({}),
-                'interfaces': d({}),
-                'functions': d({}),
+                'api': {
+                    'root': {
+                        'algorithms': d({}),
+                    },
+                    'imports': d({}),
+                },
             },
             'imports': d({}),
         }

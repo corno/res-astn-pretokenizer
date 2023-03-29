@@ -1,14 +1,6 @@
 import * as pd from 'pareto-core-data'
 
-import {
-    null_,
-    array,
-    string,
-    reference,
-    boolean,
-    typeReference,
-    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, number, type
-} from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
+import { group, member, number, ref, string, taggedUnion, type, typeReference } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 
@@ -16,6 +8,7 @@ const d = pd.d
 
 export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
+    'imports': d({}),
     'root': {
         'namespaces': d({}),
         'types': d({
@@ -32,7 +25,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                     //     readonly "found": string
                     // }]  
                 })),
-                "location": member(reference("LocationInfo")),
+                "location": member(ref(typeReference("LocationInfo"))),
             })),
             "LineLocation": type(group({
                 //first line in document has value 1
@@ -42,7 +35,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             })),
             "LocationInfo": type(group({
                 "absolutePosition": member(number()),
-                "lineLocation": member(reference("LineLocation")),
+                "lineLocation": member(ref(typeReference("LineLocation"))),
             })),
             "Pretoken": type(group({
                 "type": member(taggedUnion({
@@ -77,7 +70,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                     "whitespace end": group({
                     }),
                 })),
-                "location": member(reference("LocationInfo")),
+                "location": member(ref(typeReference("LocationInfo"))),
             })),
             "PretokenizerConfigurationData": type(group({
                 "absolutePositionStart": member(number()),
@@ -94,9 +87,9 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
 
             })),
             "Range": type(group({
-                "start": member(reference("LocationInfo")),
+                "start": member(ref(typeReference("LocationInfo"))),
                 "length": member(number()),
-                "size": member(reference("RangeSize")),
+                "size": member(ref(typeReference("RangeSize"))),
             })),
             "RangeSize": type(taggedUnion({
                 "singe line": group({
@@ -109,18 +102,20 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             })),
         }),
     },
-    'builders': d({}),
-    'interfaces': d({
-        // "StringStreamConsumer": ['group', { //REPLACE BY THE STRINGSTREAMCONSUMER IN GLO-PARETO-COMMON
-        //     'members': d({
-        //         "onData": method(typeReference("common", "String")),
-        //         "onEnd": method(null),
-        //     }),
-        // }],
-        // "PretokenHandler": method(typeReference("Pretoken")),
-    }),
-    'functions': d({
-        "OnError": func(typeReference("Error"), null, null, null),
-        //"Pretokenize": func(typeReference("common", "Null"), null, interfaceReference("PretokenHandler"), inf(interfaceReference("StringStreamConsumer"))),
-    }),
+    'asynchronous': {
+        'interfaces': d({
+            // "PretokenHandler": method(typeReference("Pretoken")),
+
+            //  "OnError": func(typeReference("Error"), null, null, null),
+
+        }),
+        'algorithms': d({
+            //"Pretokenize": func(typeReference("common", "Null"), null, interfaceReference("PretokenHandler"), inf(interfaceReference("StringStreamConsumer"))),
+
+        }),
+    },
+    'synchronous': {
+        'interfaces': d({}),
+        'algorithms': d({}),
+    },
 }

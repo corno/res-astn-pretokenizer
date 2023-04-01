@@ -35,9 +35,76 @@ export namespace T {
                 | ['solidus', null]
             ]
             
-            export namespace structural {
+            export namespace escape {
                 
                 export namespace O {
+                    
+                    export namespace b {}
+                    
+                    export type b = null
+                    
+                    export namespace f {}
+                    
+                    export type f = null
+                    
+                    export namespace n {}
+                    
+                    export type n = null
+                    
+                    export namespace r {}
+                    
+                    export type r = null
+                    
+                    export namespace reverse__solidus {}
+                    
+                    export type reverse__solidus = null
+                    
+                    export namespace solidus {}
+                    
+                    export type solidus = null
+                    
+                    export namespace t {}
+                    
+                    export type t = null
+                    
+                    export namespace u {}
+                    
+                    export type u = null
+                    
+                    export type wrapper = T.Wrapper
+                }
+                
+                export type O = 
+                    | ['b', null]
+                    | ['f', null]
+                    | ['n', null]
+                    | ['r', null]
+                    | ['reverse solidus', null]
+                    | ['solidus', null]
+                    | ['t', null]
+                    | ['u', null]
+                    | ['wrapper', T.Wrapper]
+            }
+            
+            export type escape = [ false ] | [ true, 
+                | ['b', null]
+                | ['f', null]
+                | ['n', null]
+                | ['r', null]
+                | ['reverse solidus', null]
+                | ['solidus', null]
+                | ['t', null]
+                | ['u', null]
+                | ['wrapper', T.Wrapper]
+            ]
+            
+            export namespace nontoken {
+                
+                export namespace O {
+                    
+                    export namespace asterisk {}
+                    
+                    export type asterisk = null
                     
                     export namespace close__angle__bracket {}
                     
@@ -83,12 +150,21 @@ export namespace T {
                     
                     export type open__parenthesis = null
                     
+                    export namespace solidus {}
+                    
+                    export type solidus = null
+                    
                     export namespace vertical__line {}
                     
                     export type vertical__line = null
+                    
+                    export type whitespace = T.Whitespace
+                    
+                    export type wrapper = T.Wrapper
                 }
                 
                 export type O = 
+                    | ['asterisk', null]
                     | ['close angle bracket', null]
                     | ['close brace', null]
                     | ['close bracket', null]
@@ -100,10 +176,14 @@ export namespace T {
                     | ['open brace', null]
                     | ['open bracket', null]
                     | ['open parenthesis', null]
+                    | ['solidus', null]
                     | ['vertical line', null]
+                    | ['whitespace', T.Whitespace]
+                    | ['wrapper', T.Wrapper]
             }
             
-            export type structural = [ false ] | [ true, 
+            export type nontoken = [ false ] | [ true, 
+                | ['asterisk', null]
                 | ['close angle bracket', null]
                 | ['close brace', null]
                 | ['close bracket', null]
@@ -115,128 +195,40 @@ export namespace T {
                 | ['open brace', null]
                 | ['open bracket', null]
                 | ['open parenthesis', null]
+                | ['solidus', null]
                 | ['vertical line', null]
+                | ['whitespace', T.Whitespace]
+                | ['wrapper', T.Wrapper]
             ]
             
-            export namespace unicode {
-                
-                export namespace O {}
-                
-                export type O = null
-            }
-            
-            export type unicode = [ false ] | [ true, null]
+            export type unicode = boolean
             
             export namespace whitespace {
                 
-                export namespace O {
-                    
-                    export namespace carriage__return {}
-                    
-                    export type carriage__return = null
-                    
-                    export namespace line__feed {}
-                    
-                    export type line__feed = null
-                    
-                    export namespace space {}
-                    
-                    export type space = null
-                    
-                    export namespace tab {}
-                    
-                    export type tab = null
-                }
-                
-                export type O = 
-                    | ['carriage return', null]
-                    | ['line feed', null]
-                    | ['space', null]
-                    | ['tab', null]
+                export type O = T.Whitespace
             }
             
-            export type whitespace = [ false ] | [ true, 
-                | ['carriage return', null]
-                | ['line feed', null]
-                | ['space', null]
-                | ['tab', null]
-            ]
+            export type whitespace = [ false ] | [ true, T.Whitespace]
             
             export namespace wrapped__string {
                 
                 export namespace O {
                     
-                    export namespace apostrophe {}
-                    
-                    export type apostrophe = null
-                    
-                    export namespace b {}
-                    
-                    export type b = null
-                    
-                    export namespace backtick {}
-                    
-                    export type backtick = null
-                    
-                    export namespace f {}
-                    
-                    export type f = null
-                    
-                    export namespace n {}
-                    
-                    export type n = null
-                    
-                    export namespace question__mark {}
-                    
-                    export type question__mark = null
-                    
-                    export namespace r {}
-                    
-                    export type r = null
-                    
                     export namespace reverse__solidus {}
                     
                     export type reverse__solidus = null
                     
-                    export namespace solidus {}
-                    
-                    export type solidus = null
-                    
-                    export namespace t {}
-                    
-                    export type t = null
-                    
-                    export namespace u {}
-                    
-                    export type u = null
+                    export type wrapper = T.Wrapper
                 }
                 
                 export type O = 
-                    | ['apostrophe', null]
-                    | ['b', null]
-                    | ['backtick', null]
-                    | ['f', null]
-                    | ['n', null]
-                    | ['question mark', null]
-                    | ['r', null]
                     | ['reverse solidus', null]
-                    | ['solidus', null]
-                    | ['t', null]
-                    | ['u', null]
+                    | ['wrapper', T.Wrapper]
             }
             
             export type wrapped__string = [ false ] | [ true, 
-                | ['apostrophe', null]
-                | ['b', null]
-                | ['backtick', null]
-                | ['f', null]
-                | ['n', null]
-                | ['question mark', null]
-                | ['r', null]
                 | ['reverse solidus', null]
-                | ['solidus', null]
-                | ['t', null]
-                | ['u', null]
+                | ['wrapper', T.Wrapper]
             ]
         }
         
@@ -245,7 +237,19 @@ export namespace T {
                 | ['asterisk', null]
                 | ['solidus', null]
             ]
-            readonly 'structural': [ false ] | [ true, 
+            readonly 'escape': [ false ] | [ true, 
+                | ['b', null]
+                | ['f', null]
+                | ['n', null]
+                | ['r', null]
+                | ['reverse solidus', null]
+                | ['solidus', null]
+                | ['t', null]
+                | ['u', null]
+                | ['wrapper', T.Wrapper]
+            ]
+            readonly 'nontoken': [ false ] | [ true, 
+                | ['asterisk', null]
                 | ['close angle bracket', null]
                 | ['close brace', null]
                 | ['close bracket', null]
@@ -257,27 +261,16 @@ export namespace T {
                 | ['open brace', null]
                 | ['open bracket', null]
                 | ['open parenthesis', null]
-                | ['vertical line', null]
-            ]
-            readonly 'unicode': [ false ] | [ true, null]
-            readonly 'whitespace': [ false ] | [ true, 
-                | ['carriage return', null]
-                | ['line feed', null]
-                | ['space', null]
-                | ['tab', null]
-            ]
-            readonly 'wrapped string': [ false ] | [ true, 
-                | ['apostrophe', null]
-                | ['b', null]
-                | ['backtick', null]
-                | ['f', null]
-                | ['n', null]
-                | ['question mark', null]
-                | ['r', null]
-                | ['reverse solidus', null]
                 | ['solidus', null]
-                | ['t', null]
-                | ['u', null]
+                | ['vertical line', null]
+                | ['whitespace', T.Whitespace]
+                | ['wrapper', T.Wrapper]
+            ]
+            readonly 'unicode': boolean
+            readonly 'whitespace': [ false ] | [ true, T.Whitespace]
+            readonly 'wrapped string': [ false ] | [ true, 
+                | ['reverse solidus', null]
+                | ['wrapper', T.Wrapper]
             ]
         }
     }
@@ -289,7 +282,19 @@ export namespace T {
                 | ['asterisk', null]
                 | ['solidus', null]
             ]
-            readonly 'structural': [ false ] | [ true, 
+            readonly 'escape': [ false ] | [ true, 
+                | ['b', null]
+                | ['f', null]
+                | ['n', null]
+                | ['r', null]
+                | ['reverse solidus', null]
+                | ['solidus', null]
+                | ['t', null]
+                | ['u', null]
+                | ['wrapper', T.Wrapper]
+            ]
+            readonly 'nontoken': [ false ] | [ true, 
+                | ['asterisk', null]
                 | ['close angle bracket', null]
                 | ['close brace', null]
                 | ['close bracket', null]
@@ -301,28 +306,62 @@ export namespace T {
                 | ['open brace', null]
                 | ['open bracket', null]
                 | ['open parenthesis', null]
-                | ['vertical line', null]
-            ]
-            readonly 'unicode': [ false ] | [ true, null]
-            readonly 'whitespace': [ false ] | [ true, 
-                | ['carriage return', null]
-                | ['line feed', null]
-                | ['space', null]
-                | ['tab', null]
-            ]
-            readonly 'wrapped string': [ false ] | [ true, 
-                | ['apostrophe', null]
-                | ['b', null]
-                | ['backtick', null]
-                | ['f', null]
-                | ['n', null]
-                | ['question mark', null]
-                | ['r', null]
-                | ['reverse solidus', null]
                 | ['solidus', null]
-                | ['t', null]
-                | ['u', null]
+                | ['vertical line', null]
+                | ['whitespace', T.Whitespace]
+                | ['wrapper', T.Wrapper]
+            ]
+            readonly 'unicode': boolean
+            readonly 'whitespace': [ false ] | [ true, T.Whitespace]
+            readonly 'wrapped string': [ false ] | [ true, 
+                | ['reverse solidus', null]
+                | ['wrapper', T.Wrapper]
             ]
         }
     }
+    
+    export namespace Whitespace {
+        
+        export namespace carriage__return {}
+        
+        export type carriage__return = null
+        
+        export namespace line__feed {}
+        
+        export type line__feed = null
+        
+        export namespace space {}
+        
+        export type space = null
+        
+        export namespace tab {}
+        
+        export type tab = null
+    }
+    
+    export type Whitespace = 
+        | ['carriage return', null]
+        | ['line feed', null]
+        | ['space', null]
+        | ['tab', null]
+    
+    export namespace Wrapper {
+        
+        export namespace apostrophe {}
+        
+        export type apostrophe = null
+        
+        export namespace backtick {}
+        
+        export type backtick = null
+        
+        export namespace quotation__mark {}
+        
+        export type quotation__mark = null
+    }
+    
+    export type Wrapper = 
+        | ['apostrophe', null]
+        | ['backtick', null]
+        | ['quotation mark', null]
 }

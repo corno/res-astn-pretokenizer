@@ -1,7 +1,7 @@
 
 import { A } from "../api.generated"
 
-export const $$: A.createCharacterStreamConsumer = () => {
+export const $$: A.createStringFromCharactersBuilder = () => {
     return {
         'construct': ($is) => {
             const chars: number[] = []

@@ -28,7 +28,7 @@ export namespace ASYNC {
         
         
         export namespace C {
-            export type CreateCharacterStreamConsumer = {
+            export type CreateStringFromCharactersBuilder = {
                 'construct': ($is: {
                     readonly 'handler': g_common.ASYNC.I.String
                 }) => ASYNC.I.CharacterCodeStreamConsumer
@@ -37,7 +37,7 @@ export namespace ASYNC {
         
         
         export namespace C {
-            export type CreateStringStreamConsumer = {
+            export type CreateStringSplitter = {
                 'construct': ($is: {
                     readonly 'handler': ASYNC.I.CharacterStreamHandler
                 }) => ASYNC.I.StringStreamConsumer

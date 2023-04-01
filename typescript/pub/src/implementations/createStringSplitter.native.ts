@@ -4,7 +4,7 @@ import * as g_this from "../glossary"
 
 import { A } from "../api.generated"
 
-export const $$: A.createStringStreamConsumer = () => {
+export const $$: A.createStringSplitter = () => {
     return {
         'construct': ($is) => {
             return {

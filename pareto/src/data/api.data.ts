@@ -12,7 +12,7 @@ export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
         // }, {
             
         // })),
-        "createStringStreamConsumer": algorithm(constructor("this", {}, "CreateStringStreamConsumer")),
-        "createCharacterStreamConsumer": algorithm(constructor("this", {}, "CreateCharacterStreamConsumer")),
+        "createStringSplitter": algorithm(constructor("this", {}, "CreateStringSplitter")),
+        "createStringFromCharactersBuilder": algorithm(constructor("this", {}, "CreateStringFromCharactersBuilder")),
     }),
 }

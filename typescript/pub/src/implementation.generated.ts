@@ -1,8 +1,8 @@
 import { API } from "./api.generated"
-import { $$ as icreateCharacterStreamConsumer } from "./implementations/createCharacterStreamConsumer.native"
-import { $$ as icreateStringStreamConsumer } from "./implementations/createStringStreamConsumer.native"
+import { $$ as icreateStringFromCharactersBuilder } from "./implementations/createStringFromCharactersBuilder.native"
+import { $$ as icreateStringSplitter } from "./implementations/createStringSplitter.native"
 
 export const $r: API = {
-    'createCharacterStreamConsumer': icreateCharacterStreamConsumer,
-    'createStringStreamConsumer': icreateStringStreamConsumer,
+    'createStringFromCharactersBuilder': icreateStringFromCharactersBuilder,
+    'createStringSplitter': icreateStringSplitter,
 }

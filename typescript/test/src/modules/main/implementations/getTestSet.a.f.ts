@@ -48,7 +48,7 @@ export const $$: A.getTestSet = ($) => {
 
     // pt("FOO")
 
-    const csc = g_pub.$r.createCharacterStreamConsumer().construct({
+    const csc = g_pub.$r.createStringFromCharactersBuilder().construct({
         'handler': ($) => {
             pd.logDebugMessage($)
         }
@@ -71,7 +71,7 @@ export const $$: A.getTestSet = ($) => {
 
 
 
-    const ssc = g_pub.$r.createStringStreamConsumer().construct({
+    const ssc = g_pub.$r.createStringSplitter().construct({
         'handler': {
             'data': ($) => {
             },

@@ -73,10 +73,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             )),
         }),
         'algorithms': d({
-            "CreateStringStreamConsumer": constructor(aInterfaceReference("StringStreamConsumer"), {
+            "CreateStringSplitter": constructor(aInterfaceReference("StringStreamConsumer"), {
                 "handler": aInterfaceReference("CharacterStreamHandler")
             }),
-            "CreateCharacterStreamConsumer": constructor(aInterfaceReference("CharacterCodeStreamConsumer"), {
+            "CreateStringFromCharactersBuilder": constructor(aInterfaceReference("CharacterCodeStreamConsumer"), {
                 "handler": aExternalInterfaceReference("common", "String")
             }),
         }),

@@ -9,12 +9,12 @@ export namespace D {
 
 export namespace A {
     
-    export type createCharacterStreamConsumer = () => g_this.ASYNC.A.C.CreateCharacterStreamConsumer
+    export type createStringFromCharactersBuilder = () => g_this.ASYNC.A.C.CreateStringFromCharactersBuilder
     
-    export type createStringStreamConsumer = () => g_this.ASYNC.A.C.CreateStringStreamConsumer
+    export type createStringSplitter = () => g_this.ASYNC.A.C.CreateStringSplitter
 }
 
 export type API = {
-    readonly 'createCharacterStreamConsumer': A.createCharacterStreamConsumer
-    readonly 'createStringStreamConsumer': A.createStringStreamConsumer
+    readonly 'createStringFromCharactersBuilder': A.createStringFromCharactersBuilder
+    readonly 'createStringSplitter': A.createStringSplitter
 }

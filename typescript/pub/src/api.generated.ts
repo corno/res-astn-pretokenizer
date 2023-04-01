@@ -4,16 +4,17 @@ import * as g_this from "./glossary"
 
 export namespace D {
     
-    export type createPretokenizer = {
-        readonly 'onError': g_this.SYNC.A.P.OnError
-    }
+    
 }
 
 export namespace A {
     
-    export type createPretokenizer = ($: g_this.T.PretokenizerConfigurationData, $d: D.createPretokenizer, ) => g_this.SYNC.A.F.Pretokenize
+    export type createCharacterStreamConsumer = () => g_this.ASYNC.A.C.CreateCharacterStreamConsumer
+    
+    export type createStringStreamConsumer = () => g_this.ASYNC.A.C.CreateStringStreamConsumer
 }
 
 export type API = {
-    readonly 'createPretokenizer': A.createPretokenizer
+    readonly 'createCharacterStreamConsumer': A.createCharacterStreamConsumer
+    readonly 'createStringStreamConsumer': A.createStringStreamConsumer
 }

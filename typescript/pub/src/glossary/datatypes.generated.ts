@@ -6,244 +6,323 @@ export namespace N {}
 
 export namespace T {
     
-    export namespace Error {
+    export namespace Character {
         
-        export type location = T.LocationInfo
-        
-        export namespace _ltype {
-            
-            export namespace found__dangling__slash__at__the__end__of__the__text {}
-            
-            export type found__dangling__slash__at__the__end__of__the__text = null
-            
-            export namespace unterminated__block__comment {}
-            
-            export type unterminated__block__comment = null
-            
-            export namespace unterminated__string {}
-            
-            export type unterminated__string = null
-        }
-        
-        export type _ltype = 
-            | ['found dangling slash at the end of the text', null]
-            | ['unterminated block comment', null]
-            | ['unterminated string', null]
-    }
-    
-    export type Error = {
-        readonly 'location': T.LocationInfo
-        readonly 'type': 
-            | ['found dangling slash at the end of the text', null]
-            | ['unterminated block comment', null]
-            | ['unterminated string', null]
-    }
-    
-    export namespace LineLocation {
-        
-        export type character = number
-        
-        export type line = number
-    }
-    
-    export type LineLocation = {
-        readonly 'character': number
-        readonly 'line': number
-    }
-    
-    export namespace LocationInfo {
-        
-        export type absolutePosition = number
-        
-        export type lineLocation = T.LineLocation
-    }
-    
-    export type LocationInfo = {
-        readonly 'absolutePosition': number
-        readonly 'lineLocation': T.LineLocation
-    }
-    
-    export namespace Pretoken {
-        
-        export type location = T.LocationInfo
+        export type code = number
         
         export namespace _ltype {
             
-            export namespace block__comment__begin {}
+            export namespace comment {
+                
+                export namespace O {
+                    
+                    export namespace asterisk {}
+                    
+                    export type asterisk = null
+                    
+                    export namespace solidus {}
+                    
+                    export type solidus = null
+                }
+                
+                export type O = 
+                    | ['asterisk', null]
+                    | ['solidus', null]
+            }
             
-            export type block__comment__begin = null
+            export type comment = [ false ] | [ true, 
+                | ['asterisk', null]
+                | ['solidus', null]
+            ]
             
-            export namespace block__comment__end {}
+            export namespace structural {
+                
+                export namespace O {
+                    
+                    export namespace close__angle__bracket {}
+                    
+                    export type close__angle__bracket = null
+                    
+                    export namespace close__brace {}
+                    
+                    export type close__brace = null
+                    
+                    export namespace close__bracket {}
+                    
+                    export type close__bracket = null
+                    
+                    export namespace close__parenthesis {}
+                    
+                    export type close__parenthesis = null
+                    
+                    export namespace colon {}
+                    
+                    export type colon = null
+                    
+                    export namespace comma {}
+                    
+                    export type comma = null
+                    
+                    export namespace exclamation__mark {}
+                    
+                    export type exclamation__mark = null
+                    
+                    export namespace open__angle__bracket {}
+                    
+                    export type open__angle__bracket = null
+                    
+                    export namespace open__brace {}
+                    
+                    export type open__brace = null
+                    
+                    export namespace open__bracket {}
+                    
+                    export type open__bracket = null
+                    
+                    export namespace open__parenthesis {}
+                    
+                    export type open__parenthesis = null
+                    
+                    export namespace vertical__line {}
+                    
+                    export type vertical__line = null
+                }
+                
+                export type O = 
+                    | ['close angle bracket', null]
+                    | ['close brace', null]
+                    | ['close bracket', null]
+                    | ['close parenthesis', null]
+                    | ['colon', null]
+                    | ['comma', null]
+                    | ['exclamation mark', null]
+                    | ['open angle bracket', null]
+                    | ['open brace', null]
+                    | ['open bracket', null]
+                    | ['open parenthesis', null]
+                    | ['vertical line', null]
+            }
             
-            export type block__comment__end = null
+            export type structural = [ false ] | [ true, 
+                | ['close angle bracket', null]
+                | ['close brace', null]
+                | ['close bracket', null]
+                | ['close parenthesis', null]
+                | ['colon', null]
+                | ['comma', null]
+                | ['exclamation mark', null]
+                | ['open angle bracket', null]
+                | ['open brace', null]
+                | ['open bracket', null]
+                | ['open parenthesis', null]
+                | ['vertical line', null]
+            ]
             
-            export namespace header__start {}
+            export namespace unicode {
+                
+                export namespace O {}
+                
+                export type O = null
+            }
             
-            export type header__start = null
+            export type unicode = [ false ] | [ true, null]
             
-            export namespace line__comment__begin {}
+            export namespace whitespace {
+                
+                export namespace O {
+                    
+                    export namespace carriage__return {}
+                    
+                    export type carriage__return = null
+                    
+                    export namespace line__feed {}
+                    
+                    export type line__feed = null
+                    
+                    export namespace space {}
+                    
+                    export type space = null
+                    
+                    export namespace tab {}
+                    
+                    export type tab = null
+                }
+                
+                export type O = 
+                    | ['carriage return', null]
+                    | ['line feed', null]
+                    | ['space', null]
+                    | ['tab', null]
+            }
             
-            export type line__comment__begin = null
+            export type whitespace = [ false ] | [ true, 
+                | ['carriage return', null]
+                | ['line feed', null]
+                | ['space', null]
+                | ['tab', null]
+            ]
             
-            export namespace line__comment__end {}
+            export namespace wrapped__string {
+                
+                export namespace O {
+                    
+                    export namespace apostrophe {}
+                    
+                    export type apostrophe = null
+                    
+                    export namespace b {}
+                    
+                    export type b = null
+                    
+                    export namespace backtick {}
+                    
+                    export type backtick = null
+                    
+                    export namespace f {}
+                    
+                    export type f = null
+                    
+                    export namespace n {}
+                    
+                    export type n = null
+                    
+                    export namespace question__mark {}
+                    
+                    export type question__mark = null
+                    
+                    export namespace r {}
+                    
+                    export type r = null
+                    
+                    export namespace reverse__solidus {}
+                    
+                    export type reverse__solidus = null
+                    
+                    export namespace solidus {}
+                    
+                    export type solidus = null
+                    
+                    export namespace t {}
+                    
+                    export type t = null
+                    
+                    export namespace u {}
+                    
+                    export type u = null
+                }
+                
+                export type O = 
+                    | ['apostrophe', null]
+                    | ['b', null]
+                    | ['backtick', null]
+                    | ['f', null]
+                    | ['n', null]
+                    | ['question mark', null]
+                    | ['r', null]
+                    | ['reverse solidus', null]
+                    | ['solidus', null]
+                    | ['t', null]
+                    | ['u', null]
+            }
             
-            export type line__comment__end = null
-            
-            export namespace newline {}
-            
-            export type newline = null
-            
-            export namespace non__wrapped__string__begin {}
-            
-            export type non__wrapped__string__begin = null
-            
-            export namespace non__wrapped__string__end {}
-            
-            export type non__wrapped__string__end = null
-            
-            export type snippet = string
-            
-            export namespace structural {}
-            
-            export type structural = null
-            
-            export namespace whitespace__begin {}
-            
-            export type whitespace__begin = null
-            
-            export namespace whitespace__end {}
-            
-            export type whitespace__end = null
-            
-            export namespace wrapped__string__begin {}
-            
-            export type wrapped__string__begin = null
-            
-            export namespace wrapped__string__end {}
-            
-            export type wrapped__string__end = null
+            export type wrapped__string = [ false ] | [ true, 
+                | ['apostrophe', null]
+                | ['b', null]
+                | ['backtick', null]
+                | ['f', null]
+                | ['n', null]
+                | ['question mark', null]
+                | ['r', null]
+                | ['reverse solidus', null]
+                | ['solidus', null]
+                | ['t', null]
+                | ['u', null]
+            ]
         }
         
-        export type _ltype = 
-            | ['block comment begin', null]
-            | ['block comment end', null]
-            | ['header start', null]
-            | ['line comment begin', null]
-            | ['line comment end', null]
-            | ['newline', null]
-            | ['non wrapped string begin', null]
-            | ['non wrapped string end', null]
-            | ['snippet', string]
-            | ['structural', null]
-            | ['whitespace begin', null]
-            | ['whitespace end', null]
-            | ['wrapped string begin', null]
-            | ['wrapped string end', null]
+        export type _ltype = {
+            readonly 'comment': [ false ] | [ true, 
+                | ['asterisk', null]
+                | ['solidus', null]
+            ]
+            readonly 'structural': [ false ] | [ true, 
+                | ['close angle bracket', null]
+                | ['close brace', null]
+                | ['close bracket', null]
+                | ['close parenthesis', null]
+                | ['colon', null]
+                | ['comma', null]
+                | ['exclamation mark', null]
+                | ['open angle bracket', null]
+                | ['open brace', null]
+                | ['open bracket', null]
+                | ['open parenthesis', null]
+                | ['vertical line', null]
+            ]
+            readonly 'unicode': [ false ] | [ true, null]
+            readonly 'whitespace': [ false ] | [ true, 
+                | ['carriage return', null]
+                | ['line feed', null]
+                | ['space', null]
+                | ['tab', null]
+            ]
+            readonly 'wrapped string': [ false ] | [ true, 
+                | ['apostrophe', null]
+                | ['b', null]
+                | ['backtick', null]
+                | ['f', null]
+                | ['n', null]
+                | ['question mark', null]
+                | ['r', null]
+                | ['reverse solidus', null]
+                | ['solidus', null]
+                | ['t', null]
+                | ['u', null]
+            ]
+        }
     }
     
-    export type Pretoken = {
-        readonly 'location': T.LocationInfo
-        readonly 'type': 
-            | ['block comment begin', null]
-            | ['block comment end', null]
-            | ['header start', null]
-            | ['line comment begin', null]
-            | ['line comment end', null]
-            | ['newline', null]
-            | ['non wrapped string begin', null]
-            | ['non wrapped string end', null]
-            | ['snippet', string]
-            | ['structural', null]
-            | ['whitespace begin', null]
-            | ['whitespace end', null]
-            | ['wrapped string begin', null]
-            | ['wrapped string end', null]
-    }
-    
-    export namespace PretokenizerConfigurationData {
-        
-        export type absolutePositionStart = number
-        
-        export type firstCharacter = number
-        
-        export type firstLine = number
-        
-        export namespace whitespace {
-            
-            export type carriage__return = number
-            
-            export type line__feed = number
-            
-            export type space = number
-            
-            export type tab = number
-        }
-        
-        export type whitespace = {
-            readonly 'carriage return': number
-            readonly 'line feed': number
-            readonly 'space': number
-            readonly 'tab': number
+    export type Character = {
+        readonly 'code': number
+        readonly 'type': {
+            readonly 'comment': [ false ] | [ true, 
+                | ['asterisk', null]
+                | ['solidus', null]
+            ]
+            readonly 'structural': [ false ] | [ true, 
+                | ['close angle bracket', null]
+                | ['close brace', null]
+                | ['close bracket', null]
+                | ['close parenthesis', null]
+                | ['colon', null]
+                | ['comma', null]
+                | ['exclamation mark', null]
+                | ['open angle bracket', null]
+                | ['open brace', null]
+                | ['open bracket', null]
+                | ['open parenthesis', null]
+                | ['vertical line', null]
+            ]
+            readonly 'unicode': [ false ] | [ true, null]
+            readonly 'whitespace': [ false ] | [ true, 
+                | ['carriage return', null]
+                | ['line feed', null]
+                | ['space', null]
+                | ['tab', null]
+            ]
+            readonly 'wrapped string': [ false ] | [ true, 
+                | ['apostrophe', null]
+                | ['b', null]
+                | ['backtick', null]
+                | ['f', null]
+                | ['n', null]
+                | ['question mark', null]
+                | ['r', null]
+                | ['reverse solidus', null]
+                | ['solidus', null]
+                | ['t', null]
+                | ['u', null]
+            ]
         }
     }
-    
-    export type PretokenizerConfigurationData = {
-        readonly 'absolutePositionStart': number
-        readonly 'firstCharacter': number
-        readonly 'firstLine': number
-        readonly 'whitespace': {
-            readonly 'carriage return': number
-            readonly 'line feed': number
-            readonly 'space': number
-            readonly 'tab': number
-        }
-    }
-    
-    export namespace Range {
-        
-        export type length = number
-        
-        export type size = T.RangeSize
-        
-        export type start = T.LocationInfo
-    }
-    
-    export type Range = {
-        readonly 'length': number
-        readonly 'size': T.RangeSize
-        readonly 'start': T.LocationInfo
-    }
-    
-    export namespace RangeSize {
-        
-        export namespace multiline {
-            
-            export type column = number
-            
-            export type line__offset = number
-        }
-        
-        export type multiline = {
-            readonly 'column': number
-            readonly 'line offset': number
-        }
-        
-        export namespace singe__line {
-            
-            export type column__offset = number
-        }
-        
-        export type singe__line = {
-            readonly 'column offset': number
-        }
-    }
-    
-    export type RangeSize = 
-        | ['multiline', {
-            readonly 'column': number
-            readonly 'line offset': number
-        }]
-        | ['singe line', {
-            readonly 'column offset': number
-        }]
 }

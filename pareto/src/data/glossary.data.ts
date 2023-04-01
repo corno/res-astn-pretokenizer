@@ -1,6 +1,6 @@
 import * as pd from 'pareto-core-data'
 
-import { group, member, number, ref, string, taggedUnion, type, typeReference } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
+import { aExternalInterfaceReference, aInterface, aInterfaceMethod, aInterfaceReference, constructor, externalTypeReference, group, member, number, optional, ref, streamconsumer, string, taggedUnion, type, typeReference } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 
@@ -12,106 +12,73 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'root': {
         'namespaces': d({}),
         'types': d({
-            "Error": type(group({
-                "type": member(taggedUnion({
-                    "unterminated block comment": group({}),
-                    "found dangling slash at the end of the text": group({}),
-                    "unterminated string": group({}),
-                    // | ["found dangling slash", null]
-                    // | ["expected hexadecimal digit", {
-                    //     readonly "found": string
-                    // }]
-                    // | ["expected special character after escape slash", {
-                    //     readonly "found": string
-                    // }]  
-                })),
-                "location": member(ref(typeReference("LocationInfo"))),
-            })),
-            "LineLocation": type(group({
-                //first line in document has value 1
-                "line": member(number()),
-                //first character on a line has value 1
-                "character": member(number()),
-            })),
-            "LocationInfo": type(group({
-                "absolutePosition": member(number()),
-                "lineLocation": member(ref(typeReference("LineLocation"))),
-            })),
-            "Pretoken": type(group({
-                "type": member(taggedUnion({
-                    "header start": group({
-                    }),
-                    "block comment begin": group({
-                    }),
-                    "block comment end": group({
-                    }),
-                    "line comment begin": group({
-                    }),
-                    "line comment end": group({
-                    }),
-                    "newline": group({
-                    }),
-                    "structural": group({
-                        //"type": member(reference("tc", "StructuralTokenType")),
-                    }),
-                    "wrapped string begin": group({
-                        //"type": member(reference("tc", "WrappedStringType")),
-                    }),
-                    "wrapped string end": group({
-                        //     wrapper: string | null
-                    }),
-                    "snippet": string(),
-                    "non wrapped string begin": group({
-                    }),
-                    "non wrapped string end": group({
-                    }),
-                    "whitespace begin": group({
-                    }),
-                    "whitespace end": group({
-                    }),
-                })),
-                "location": member(ref(typeReference("LocationInfo"))),
-            })),
-            "PretokenizerConfigurationData": type(group({
-                "absolutePositionStart": member(number()),
-                "firstLine": member(number()),
-                "firstCharacter": member(number()),
-                "whitespace": member(group({
-
-                    "carriage return": member(number()),
-                    "line feed": member(number()),
-                    "space": member(number()),
-                    "tab": member(number()),
-
-                })),
-
-            })),
-            "Range": type(group({
-                "start": member(ref(typeReference("LocationInfo"))),
-                "length": member(number()),
-                "size": member(ref(typeReference("RangeSize"))),
-            })),
-            "RangeSize": type(taggedUnion({
-                "singe line": group({
-                    "column offset": member(number()),
-                }),
-                "multiline": group({
-                    "line offset": member(number()),
-                    "column": member(number()),
-                }),
-            })),
+            "Character": type(group({
+                "code": member(number()),
+                "type": member(group({
+                    "comment": member(optional(taggedUnion({
+                        "asterisk": group({}),              // *
+                        "solidus": group({}),               // /
+                    }))),
+                    "structural": member(optional(taggedUnion({
+                        "exclamation mark": group({}),      // !
+                        "vertical line": group({}),         // |
+                        "comma": group({}),                 // ,
+                        "colon": group({}),                 // :
+                        "open brace": group({}),            // {
+                        "close brace": group({}),           // }
+                        "open parenthesis": group({}),      // (
+                        "close parenthesis": group({}),     // )
+                        "open bracket": group({}),          // [
+                        "close bracket": group({}),         // ]
+                        "open angle bracket": group({}),    // <
+                        "close angle bracket": group({}),   // >
+                    }))),
+                    "unicode": member(optional(group({}))), // 0-9 a-f A-F
+                    "whitespace": member(optional(taggedUnion({
+                        "tab": group({}),                   // /t
+                        "line feed": group({}),             // /n
+                        "carriage return": group({}),       // /r
+                        "space": group({}),                 //  
+                    }))),
+                    "wrapped string": member(optional(taggedUnion({
+                        "question mark": group({}),         // ?
+                        "apostrophe": group({}),            // '
+                        "backtick": group({}),              // `
+                        "reverse solidus": group({}),       // \
+                        "solidus": group({}),               // /
+                        "b": group({}),                     // b
+                        "f": group({}),                     // f
+                        "n": group({}),                     // n
+                        "r": group({}),                     // r
+                        "t": group({}),                     // t
+                        "u": group({}),                     // u
+                    }))),
+                }))
+            }))
         }),
     },
     'asynchronous': {
         'interfaces': d({
-            // "PretokenHandler": method(typeReference("Pretoken")),
-
-            //  "OnError": func(typeReference("Error"), null, null, null),
-
+            "StringStreamConsumer": aInterface(streamconsumer(
+                aInterfaceMethod(externalTypeReference("common", "String")),
+                aInterfaceMethod(null)
+            )),
+            "CharacterCodeStreamConsumer": aInterface(streamconsumer(
+                aInterfaceMethod(externalTypeReference("common", "Number")),
+                aInterfaceMethod(null)
+            )),
+            "CharacterStreamHandler": aInterface(streamconsumer(
+                aInterfaceMethod(typeReference("Character")),
+                aInterfaceMethod(null)
+            )),
         }),
         'algorithms': d({
-            //"Pretokenize": func(typeReference("common", "Null"), null, interfaceReference("PretokenHandler"), inf(interfaceReference("StringStreamConsumer"))),
-
+            "CreateStringStreamConsumer": constructor(aInterfaceReference("StringStreamConsumer"), {
+                "handler": aInterfaceReference("CharacterStreamHandler")
+            }),
+            "CreateCharacterStreamConsumer": constructor(aInterfaceReference("CharacterCodeStreamConsumer"), {
+                "handler": aExternalInterfaceReference("common", "String")
+            }),
         }),
     },
     'synchronous': {

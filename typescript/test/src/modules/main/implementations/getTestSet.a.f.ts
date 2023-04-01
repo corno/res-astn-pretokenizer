@@ -1,16 +1,16 @@
 
 import * as pm from 'pareto-core-state'
 import * as pl from 'pareto-core-lib'
+import * as pd from 'pareto-core-dev'
+import * as pa from 'pareto-core-async'
 
-import * as api from "../api"
+import { A } from "../api.generated"
 
-import * as pub from "../../../../../pub"
+import * as g_pub from "../../../../../pub"
 
-import * as mtest from "lib-pareto-test"
-import * as mfs from "res-pareto-filesystem"
-import * as mfsLib from "lib-pareto-filesystem"
+import * as g_test from "lib-pareto-test"
 
-export const $$: api.CgetTestSet = ($) => {
+export const $$: A.getTestSet = ($) => {
 
     // pl.logDebugMessage(`TD> ${$.testDirectory}`)
 
@@ -48,39 +48,44 @@ export const $$: api.CgetTestSet = ($) => {
 
     // pt("FOO")
 
-    const tokenizer = pub.$a.createPretokenizer(
-        {
-            'absolutePositionStart': 0,
-            'firstCharacter': 1,
-            'firstLine': 1,
-            'whitespace': {
-                'tab': 0x09,               // \t
-                'line feed': 0x0A,         // \n
-                'carriage return': 0x0D,   // \r
-                'space': 0x20,             //
+    const csc = g_pub.$r.createCharacterStreamConsumer().construct({
+        'handler': ($) => {
+            pd.logDebugMessage($)
+        }
+    })
+
+    //Hello world!
+    csc.data(0x48)
+    csc.data(0x65)
+    csc.data(0x6c)
+    csc.data(0x6c)
+    csc.data(0x6f)
+    csc.data(0x20)
+    csc.data(0x77)
+    csc.data(0x6f)
+    csc.data(0x72)
+    csc.data(0x6c)
+    csc.data(0x64)
+    csc.data(0x21)
+    csc.end()
+
+
+
+    const ssc = g_pub.$r.createStringStreamConsumer().construct({
+        'handler': {
+            'data': ($) => {
             },
-        },
-        {
-            onError: ($) => {
-                pl.logDebugMessage("ERROR")
+            'end': () => {
+                //
             }
         }
-    )(
-        null,
-        ($) => {
-            // switch ($[0]) {
-            //     case '': 
-            //         pl.cc($[1], ($) => {
+    })
+    ssc.data("Foo")
+    ssc.data("Bar")
+    ssc.end()
 
-            //         })
-            //         break
-            //     default: pl.au($[0])
-            // }
-        }
-    )
-    tokenizer.onData("FOOBAR")
 
-    const builder = pm.createUnsafeDictionaryBuilder<mtest.TTestElement>()
+    const builder = pm.createUnsafeDictionaryBuilder<g_test.T.TestElement>()
     function createTest(name: string, actual: string, expected: string) {
         builder.add(name, {
             type: ["test", {
@@ -92,7 +97,7 @@ export const $$: api.CgetTestSet = ($) => {
         })
     }
 
-    return pl.asyncValue({
+    return pa.asyncValue({
         elements: builder.getDictionary()
     })
 }

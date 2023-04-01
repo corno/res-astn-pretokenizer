@@ -1,6 +1,8 @@
 import { API } from "./api.generated"
-import { $$ as icreatePretokenizer } from "./implementations/createPretokenizer.native"
+import { $$ as icreateCharacterStreamConsumer } from "./implementations/createCharacterStreamConsumer.native"
+import { $$ as icreateStringStreamConsumer } from "./implementations/createStringStreamConsumer.native"
 
 export const $r: API = {
-    'createPretokenizer': icreatePretokenizer,
+    'createCharacterStreamConsumer': icreateCharacterStreamConsumer,
+    'createStringStreamConsumer': icreateStringStreamConsumer,
 }

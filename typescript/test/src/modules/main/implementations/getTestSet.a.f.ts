@@ -48,7 +48,9 @@ export const $$: A.getTestSet = ($) => {
 
     // pt("FOO")
 
-    const csc = g_pub.$r.createStringFromCharactersBuilder().construct({
+    const csc = g_pub.$r.createStringFromCharactersBuilder({
+        'maximum string length': [true, 3]
+    }).construct({
         'handler': ($) => {
             pd.logDebugMessage($)
         }

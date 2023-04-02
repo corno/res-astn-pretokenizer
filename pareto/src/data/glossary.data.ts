@@ -2,7 +2,7 @@ import * as pd from 'pareto-core-data'
 
 import {
     aExternalInterfaceReference, aInterface, aInterfaceMethod, aInterfaceReference, constructor,
-    data, externalTypeReference, group, imp, optional, ref, sfunction,
+    data, externalTypeReference, group, imp, member, number, optional, ref, sfunction,
     streamconsumer, taggedUnion, type, typeReference
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
@@ -43,6 +43,9 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "vertical line": group({}),         // |
             })),
             "PossibleSymbol": type(optional(ref(typeReference("SymbolType")))),
+            "StringBuilderConfiguration": type(group({
+                "maximum string length": member(optional(number())),
+            }))
         }),
     },
     'asynchronous': {

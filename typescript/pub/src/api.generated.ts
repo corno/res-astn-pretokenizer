@@ -11,7 +11,7 @@ export namespace D {
 
 export namespace A {
     
-    export type createStringFromCharactersBuilder = () => g_this.ASYNC.A.C.CreateStringFromCharactersBuilder
+    export type createStringFromCharactersBuilder = ($: g_this.T.StringBuilderConfiguration, ) => g_this.ASYNC.A.C.CreateStringFromCharactersBuilder
     
     export type createStringSplitter = () => g_this.ASYNC.A.C.CreateStringSplitter
     

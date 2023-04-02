@@ -13,6 +13,20 @@ export namespace T {
     
     export type PossibleSymbol = [ false ] | [ true, T.SymbolType]
     
+    export namespace StringBuilderConfiguration {
+        
+        export namespace maximum__string__length {
+            
+            export type O = number
+        }
+        
+        export type maximum__string__length = [ false ] | [ true, number]
+    }
+    
+    export type StringBuilderConfiguration = {
+        readonly 'maximum string length': [ false ] | [ true, number]
+    }
+    
     export namespace SymbolType {
         
         export namespace apostrophe {}

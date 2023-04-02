@@ -25,7 +25,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "apostrophe": group({}),            // '
                 "backtick": group({}),              // `
             })),
-            "NonWrappedCharacterType": type(taggedUnion({
+            "NonWrappedMarkerType": type(taggedUnion({
                 "solidus": group({}),               // /
 
                 "quotation mark": group({}),        // "
@@ -46,6 +46,9 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "close angle bracket": group({}),   // >
 
                 "whitespace": group({}),
+            })),
+            "NonWrappedCharacterType": type(taggedUnion({
+                "marker": ref(typeReference("NonWrappedMarkerType")),
                 "other": group({}),
             })),
 

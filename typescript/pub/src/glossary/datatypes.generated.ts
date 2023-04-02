@@ -33,6 +33,19 @@ export namespace T {
     
     export namespace NonWrappedCharacterType {
         
+        export type marker = T.NonWrappedMarkerType
+        
+        export namespace other {}
+        
+        export type other = null
+    }
+    
+    export type NonWrappedCharacterType = 
+        | ['marker', T.NonWrappedMarkerType]
+        | ['other', null]
+    
+    export namespace NonWrappedMarkerType {
+        
         export namespace apostrophe {}
         
         export type apostrophe = null
@@ -85,10 +98,6 @@ export namespace T {
         
         export type open__parenthesis = null
         
-        export namespace other {}
-        
-        export type other = null
-        
         export namespace quotation__mark {}
         
         export type quotation__mark = null
@@ -106,7 +115,7 @@ export namespace T {
         export type whitespace = null
     }
     
-    export type NonWrappedCharacterType = 
+    export type NonWrappedMarkerType = 
         | ['apostrophe', null]
         | ['backtick', null]
         | ['close angle bracket', null]
@@ -120,7 +129,6 @@ export namespace T {
         | ['open brace', null]
         | ['open bracket', null]
         | ['open parenthesis', null]
-        | ['other', null]
         | ['quotation mark', null]
         | ['solidus', null]
         | ['vertical line', null]

@@ -7,11 +7,9 @@ const d = pd.d
 
 export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
-        // "createPretokenizer": algorithm(sfunction("this", {}, "Pretokenize"), {}, dependent(data("this", {}, "PretokenizerConfigurationData"), {
-        //     "onError": procedure("this", {}, "OnError"),
-        // }, {
-            
-        // })),
+        "getCharacterPositionType": algorithm(sfunction("this", {}, "GetCharacterPositionType")),
+        "getStartCharacterType": algorithm(sfunction("this", {}, "GetStartCharacterType")),
+
         "createStringSplitter": algorithm(constructor("this", {}, "CreateStringSplitter")),
         "createStringFromCharactersBuilder": algorithm(constructor("this", {}, "CreateStringFromCharactersBuilder")),
     }),

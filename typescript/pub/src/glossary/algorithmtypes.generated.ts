@@ -8,13 +8,8 @@ export namespace ASYNC {
     
     export namespace I {
         
-        export type CharacterCodeStreamConsumer = {
+        export type CharacterStreamConsumer = {
             'data': ($: g_common.T.Number, ) => void
-            'end': () => void
-        }
-        
-        export type CharacterStreamHandler = {
-            'data': ($: T.Character, ) => void
             'end': () => void
         }
         
@@ -31,7 +26,7 @@ export namespace ASYNC {
             export type CreateStringFromCharactersBuilder = {
                 'construct': ($is: {
                     readonly 'handler': g_common.ASYNC.I.String
-                }) => ASYNC.I.CharacterCodeStreamConsumer
+                }) => ASYNC.I.CharacterStreamConsumer
             }
         }
         
@@ -39,11 +34,20 @@ export namespace ASYNC {
         export namespace C {
             export type CreateStringSplitter = {
                 'construct': ($is: {
-                    readonly 'handler': ASYNC.I.CharacterStreamHandler
+                    readonly 'handler': ASYNC.I.CharacterStreamConsumer
                 }) => ASYNC.I.StringStreamConsumer
             }
         }
     }
 }
 
-export namespace SYNC {}
+export namespace SYNC {
+    
+    export namespace A {
+        
+        
+        export namespace F {
+            export type GetCharacterPositionType = ($: g_common.T.Number) => T.CharacterPositionType
+        }
+    }
+}

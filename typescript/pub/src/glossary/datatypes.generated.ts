@@ -51,6 +51,21 @@ export namespace T {
         | ['illegal', null]
         | ['solidus', null]
     
+    export namespace NewlineCharacter {
+        
+        export namespace carriage__return {}
+        
+        export type carriage__return = null
+        
+        export namespace line__feed {}
+        
+        export type line__feed = null
+    }
+    
+    export type NewlineCharacter = 
+        | ['carriage return', null]
+        | ['line feed', null]
+    
     export namespace NonWrappedCharacterType {
         
         export type marker = T.NonWrappedMarkerType
@@ -153,6 +168,13 @@ export namespace T {
         | ['solidus', null]
         | ['vertical line', null]
         | ['whitespace', null]
+    
+    export namespace PossibleNewlineCharacter {
+        
+        export type O = T.NewlineCharacter
+    }
+    
+    export type PossibleNewlineCharacter = [ false ] | [ true, T.NewlineCharacter]
     
     export namespace PossibleWhitespaceCharacter {
         

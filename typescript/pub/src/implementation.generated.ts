@@ -4,6 +4,7 @@ import { $$ as icreateStringSplitter } from "./implementations/createStringSplit
 import { $$ as igetCharacterPositionType } from "./implementations/getCharacterPositionType.native"
 import { $$ as igetCommentCharacter } from "./implementations/getCommentCharacter.native"
 import { $$ as igetNonWrappedCharacterType } from "./implementations/getNonWrappedCharacterType.native"
+import { $$ as igetPossibleNewlineCharacter } from "./implementations/getPossibleNewlineCharacter.native"
 import { $$ as iisAsterisk } from "./implementations/isAsterisk.native"
 import { $$ as iisHexadecimal } from "./implementations/isHexadecimal.native"
 
@@ -13,6 +14,7 @@ export const $r: API = {
     'getCharacterPositionType': igetCharacterPositionType,
     'getCommentCharacter': igetCommentCharacter,
     'getNonWrappedCharacterType': igetNonWrappedCharacterType,
+    'getPossibleNewlineCharacter': igetPossibleNewlineCharacter,
     'isAsterisk': iisAsterisk,
     'isHexadecimal': iisHexadecimal,
 }

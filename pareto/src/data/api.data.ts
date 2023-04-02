@@ -12,6 +12,7 @@ export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
         "getCharacterPositionType": algorithm(sfunction("this", {}, "GetCharacterPositionType")),
         "getNonWrappedCharacterType": algorithm(sfunction("this", {}, "GetNonWrappedCharacterType")),
         "getCommentCharacter": algorithm(sfunction("this", {}, "GetCommentCharacter")),
+        "getPossibleNewlineCharacter": algorithm(sfunction("this", {}, "GetPossibleNewlineCharacter")),
 
         "createStringSplitter": algorithm(constructor("this", {}, "CreateStringSplitter")),
         "createStringFromCharactersBuilder": algorithm(constructor("this", {}, "CreateStringFromCharactersBuilder")),

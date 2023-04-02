@@ -64,7 +64,12 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             })),
             "PossibleWhitespaceCharacter": type(optional(ref(typeReference("WhitespaceCharacter")))),
 
+            "NewlineCharacter": type(taggedUnion({
+                "carriage return": group({}),       // \r
+                "line feed": group({}),             // \n
 
+            })),
+            "PossibleNewlineCharacter": type(optional(ref(typeReference("NewlineCharacter"))))
 
             // "nontoken": member(optional(taggedUnion({
 
@@ -131,6 +136,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
 
             "IsHexadecimal": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
             "GetCommentCharacter": sfunction(typeReference("CommentCharacter"), data(externalTypeReference("common", "Number"))),
+            "GetPossibleNewlineCharacter": sfunction(typeReference("PossibleNewlineCharacter"), data(externalTypeReference("common", "Number"))),
             "IsAsterisk": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
 
             // "GetStartCharacter": sfunction(typeReference("PossibleStartCharacter"), data(externalTypeReference("common", "Number"))),

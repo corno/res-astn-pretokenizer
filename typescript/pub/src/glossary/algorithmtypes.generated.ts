@@ -62,6 +62,11 @@ export namespace SYNC {
         
         
         export namespace F {
+            export type GetPossibleNewlineCharacter = ($: g_common.T.Number) => T.PossibleNewlineCharacter
+        }
+        
+        
+        export namespace F {
             export type IsAsterisk = ($: g_common.T.Number) => g_common.T.Boolean
         }
         

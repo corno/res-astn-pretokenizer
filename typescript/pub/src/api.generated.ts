@@ -10,6 +10,7 @@ export namespace D {
     
     
     
+    
 }
 
 export namespace A {
@@ -24,6 +25,8 @@ export namespace A {
     
     export type getNonWrappedCharacterType = () => g_this.SYNC.A.F.GetNonWrappedCharacterType
     
+    export type getPossibleNewlineCharacter = () => g_this.SYNC.A.F.GetPossibleNewlineCharacter
+    
     export type isAsterisk = () => g_this.SYNC.A.F.IsAsterisk
     
     export type isHexadecimal = () => g_this.SYNC.A.F.IsHexadecimal
@@ -35,6 +38,7 @@ export type API = {
     readonly 'getCharacterPositionType': A.getCharacterPositionType
     readonly 'getCommentCharacter': A.getCommentCharacter
     readonly 'getNonWrappedCharacterType': A.getNonWrappedCharacterType
+    readonly 'getPossibleNewlineCharacter': A.getPossibleNewlineCharacter
     readonly 'isAsterisk': A.isAsterisk
     readonly 'isHexadecimal': A.isHexadecimal
 }

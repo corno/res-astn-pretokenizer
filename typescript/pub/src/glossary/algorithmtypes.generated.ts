@@ -47,11 +47,6 @@ export namespace SYNC {
         
         
         export namespace F {
-            export type GetCharacterPositionType = ($: g_common.T.Number) => T.CharacterPositionType
-        }
-        
-        
-        export namespace F {
             export type GetCommentCharacter = ($: g_common.T.Number) => T.CommentCharacter
         }
         
@@ -63,6 +58,11 @@ export namespace SYNC {
         
         export namespace F {
             export type GetPossibleNewlineCharacter = ($: g_common.T.Number) => T.PossibleNewlineCharacter
+        }
+        
+        
+        export namespace F {
+            export type GetPossibleSymbol = ($: g_common.T.Number) => T.PossibleSymbol
         }
         
         

@@ -14,12 +14,39 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'root': {
         'namespaces': d({}),
         'types': d({
-            "CharacterPositionType": type(taggedUnion({
-                "line feed": group({}),
-                "carriage return": group({}),
-                "tab": group({}),
-                "other": group({})
+            // "CharacterPositionType": type(taggedUnion({
+            //     "line feed": group({}),
+            //     "carriage return": group({}),
+            //     "tab": group({}),
+            //     "other": group({})
+            // })),
+
+
+            "SymbolType": type(taggedUnion({
+                "apostrophe": group({}),            // '
+                "asterisk": group({}),              // *
+                "backtick": group({}),              // `
+                "carriage return": group({}),       // \r
+                "close angle bracket": group({}),   // >
+                "close brace": group({}),           // }
+                "close bracket": group({}),         // ]
+                "close parenthesis": group({}),     // )
+                "colon": group({}),                 // :
+                "comma": group({}),                 // ,
+                "exclamation mark": group({}),      // !
+                "line feed": group({}),             // \n
+                "open angle bracket": group({}),    // <
+                "open brace": group({}),            // {
+                "open bracket": group({}),          // [
+                "open parenthesis": group({}),      // (
+                "quotation mark": group({}),        // "
+                "reverse solidus": group({}),       // \
+                "solidus": group({}),               // /
+                "space": group({}),                 //
+                "tab": group({}),                   // \t
+                "vertical line": group({}),         // |
             })),
+            "PossibleSymbol": type(optional(ref(typeReference("SymbolType")))),
             "StringWrapCharacter": type(taggedUnion({
                 "quotation mark": group({}),        // "
                 "apostrophe": group({}),            // '
@@ -52,17 +79,17 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "other": group({}),
             })),
 
-            "WhitespaceCharacter": type(taggedUnion({
-                "tab": group({}),                   // /t
-                "space": group({}),                 //  
-            })),
+            // "WhitespaceCharacter": type(taggedUnion({
+            //     "tab": group({}),                   // /t
+            //     "space": group({}),                 //  
+            // })),
             "CommentCharacter": type(taggedUnion({
                 "solidus": group({}),               // /
                 "asterisk": group({}),              // *
                 "illegal": group({}),
 
             })),
-            "PossibleWhitespaceCharacter": type(optional(ref(typeReference("WhitespaceCharacter")))),
+            //"PossibleWhitespaceCharacter": type(optional(ref(typeReference("WhitespaceCharacter")))),
 
             "NewlineCharacter": type(taggedUnion({
                 "carriage return": group({}),       // \r
@@ -131,7 +158,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'synchronous': {
         'interfaces': d({}),
         'algorithms': d({
-            "GetCharacterPositionType": sfunction(typeReference("CharacterPositionType"), data(externalTypeReference("common", "Number"))),
+            "GetPossibleSymbol": sfunction(typeReference("PossibleSymbol"), data(externalTypeReference("common", "Number"))),
             "GetNonWrappedCharacterType": sfunction(typeReference("NonWrappedCharacterType"), data(externalTypeReference("common", "Number"))),
 
             "IsHexadecimal": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),

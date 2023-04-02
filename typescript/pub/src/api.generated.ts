@@ -27,9 +27,9 @@ export namespace A {
     
     export type getPossibleNewlineCharacter = () => g_this.SYNC.A.F.GetPossibleNewlineCharacter
     
-    export type isAsterisk = () => g_this.SYNC.A.F.IsAsterisk
-    
     export type isHexadecimal = () => g_this.SYNC.A.F.IsHexadecimal
+    
+    export type isTab = () => g_this.SYNC.A.F.IsTab
 }
 
 export type API = {
@@ -39,6 +39,6 @@ export type API = {
     readonly 'getCommentCharacter': A.getCommentCharacter
     readonly 'getNonWrappedCharacterType': A.getNonWrappedCharacterType
     readonly 'getPossibleNewlineCharacter': A.getPossibleNewlineCharacter
-    readonly 'isAsterisk': A.isAsterisk
     readonly 'isHexadecimal': A.isHexadecimal
+    readonly 'isTab': A.isTab
 }

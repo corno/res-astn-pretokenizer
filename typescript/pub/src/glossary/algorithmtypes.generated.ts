@@ -67,12 +67,12 @@ export namespace SYNC {
         
         
         export namespace F {
-            export type IsAsterisk = ($: g_common.T.Number) => g_common.T.Boolean
+            export type IsHexadecimal = ($: g_common.T.Number) => g_common.T.Boolean
         }
         
         
         export namespace F {
-            export type IsHexadecimal = ($: g_common.T.Number) => g_common.T.Boolean
+            export type IsTab = ($: g_common.T.Number) => g_common.T.Boolean
         }
     }
 }

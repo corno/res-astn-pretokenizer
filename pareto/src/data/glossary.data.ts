@@ -137,7 +137,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "IsHexadecimal": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
             "GetCommentCharacter": sfunction(typeReference("CommentCharacter"), data(externalTypeReference("common", "Number"))),
             "GetPossibleNewlineCharacter": sfunction(typeReference("PossibleNewlineCharacter"), data(externalTypeReference("common", "Number"))),
-            "IsAsterisk": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
+            "IsTab": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
 
             // "GetStartCharacter": sfunction(typeReference("PossibleStartCharacter"), data(externalTypeReference("common", "Number"))),
             // "GetWhitespaceCharacter": sfunction(typeReference("PossibleWhitespaceCharacter"), data(externalTypeReference("common", "Number"))),

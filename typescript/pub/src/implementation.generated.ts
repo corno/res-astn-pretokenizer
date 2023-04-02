@@ -5,8 +5,8 @@ import { $$ as igetCharacterPositionType } from "./implementations/getCharacterP
 import { $$ as igetCommentCharacter } from "./implementations/getCommentCharacter.native"
 import { $$ as igetNonWrappedCharacterType } from "./implementations/getNonWrappedCharacterType.native"
 import { $$ as igetPossibleNewlineCharacter } from "./implementations/getPossibleNewlineCharacter.native"
-import { $$ as iisAsterisk } from "./implementations/isAsterisk.native"
 import { $$ as iisHexadecimal } from "./implementations/isHexadecimal.native"
+import { $$ as iisTab } from "./implementations/isTab.native"
 
 export const $r: API = {
     'createStringFromCharactersBuilder': icreateStringFromCharactersBuilder,
@@ -15,6 +15,6 @@ export const $r: API = {
     'getCommentCharacter': igetCommentCharacter,
     'getNonWrappedCharacterType': igetNonWrappedCharacterType,
     'getPossibleNewlineCharacter': igetPossibleNewlineCharacter,
-    'isAsterisk': iisAsterisk,
     'isHexadecimal': iisHexadecimal,
+    'isTab': iisTab,
 }

@@ -9,6 +9,7 @@ export namespace D {
     
     
     
+    
 }
 
 export namespace A {
@@ -18,6 +19,8 @@ export namespace A {
     export type createStringSplitter = () => g_this.ASYNC.A.C.CreateStringSplitter
     
     export type getCharacterPositionType = () => g_this.SYNC.A.F.GetCharacterPositionType
+    
+    export type getCommentCharacter = () => g_this.SYNC.A.F.GetCommentCharacter
     
     export type getNonWrappedCharacterType = () => g_this.SYNC.A.F.GetNonWrappedCharacterType
     
@@ -30,6 +33,7 @@ export type API = {
     readonly 'createStringFromCharactersBuilder': A.createStringFromCharactersBuilder
     readonly 'createStringSplitter': A.createStringSplitter
     readonly 'getCharacterPositionType': A.getCharacterPositionType
+    readonly 'getCommentCharacter': A.getCommentCharacter
     readonly 'getNonWrappedCharacterType': A.getNonWrappedCharacterType
     readonly 'isAsterisk': A.isAsterisk
     readonly 'isHexadecimal': A.isHexadecimal

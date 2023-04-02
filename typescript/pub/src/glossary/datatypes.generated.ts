@@ -31,6 +31,26 @@ export namespace T {
         | ['other', null]
         | ['tab', null]
     
+    export namespace CommentCharacter {
+        
+        export namespace asterisk {}
+        
+        export type asterisk = null
+        
+        export namespace illegal {}
+        
+        export type illegal = null
+        
+        export namespace solidus {}
+        
+        export type solidus = null
+    }
+    
+    export type CommentCharacter = 
+        | ['asterisk', null]
+        | ['illegal', null]
+        | ['solidus', null]
+    
     export namespace NonWrappedCharacterType {
         
         export type marker = T.NonWrappedMarkerType

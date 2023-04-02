@@ -11,6 +11,7 @@ export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
         "isHexadecimal": algorithm(sfunction("this", {}, "IsHexadecimal")),
         "getCharacterPositionType": algorithm(sfunction("this", {}, "GetCharacterPositionType")),
         "getNonWrappedCharacterType": algorithm(sfunction("this", {}, "GetNonWrappedCharacterType")),
+        "getCommentCharacter": algorithm(sfunction("this", {}, "GetCommentCharacter")),
 
         "createStringSplitter": algorithm(constructor("this", {}, "CreateStringSplitter")),
         "createStringFromCharactersBuilder": algorithm(constructor("this", {}, "CreateStringFromCharactersBuilder")),

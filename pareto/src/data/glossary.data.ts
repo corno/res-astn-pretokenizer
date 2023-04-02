@@ -56,6 +56,12 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "tab": group({}),                   // /t
                 "space": group({}),                 //  
             })),
+            "CommentCharacter": type(taggedUnion({
+                "solidus": group({}),               // /
+                "asterisk": group({}),              // *
+                "illegal": group({}),
+
+            })),
             "PossibleWhitespaceCharacter": type(optional(ref(typeReference("WhitespaceCharacter")))),
 
 
@@ -124,6 +130,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "GetNonWrappedCharacterType": sfunction(typeReference("NonWrappedCharacterType"), data(externalTypeReference("common", "Number"))),
 
             "IsHexadecimal": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
+            "GetCommentCharacter": sfunction(typeReference("CommentCharacter"), data(externalTypeReference("common", "Number"))),
             "IsAsterisk": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
 
             // "GetStartCharacter": sfunction(typeReference("PossibleStartCharacter"), data(externalTypeReference("common", "Number"))),

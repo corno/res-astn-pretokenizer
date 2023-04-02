@@ -52,6 +52,11 @@ export namespace SYNC {
         
         
         export namespace F {
+            export type GetCommentCharacter = ($: g_common.T.Number) => T.CommentCharacter
+        }
+        
+        
+        export namespace F {
             export type GetNonWrappedCharacterType = ($: g_common.T.Number) => T.NonWrappedCharacterType
         }
         

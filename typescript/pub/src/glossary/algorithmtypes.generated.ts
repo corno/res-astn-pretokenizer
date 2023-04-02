@@ -49,5 +49,20 @@ export namespace SYNC {
         export namespace F {
             export type GetCharacterPositionType = ($: g_common.T.Number) => T.CharacterPositionType
         }
+        
+        
+        export namespace F {
+            export type GetNonWrappedCharacterType = ($: g_common.T.Number) => T.NonWrappedCharacterType
+        }
+        
+        
+        export namespace F {
+            export type IsAsterisk = ($: g_common.T.Number) => g_common.T.Boolean
+        }
+        
+        
+        export namespace F {
+            export type IsHexadecimal = ($: g_common.T.Number) => g_common.T.Boolean
+        }
     }
 }

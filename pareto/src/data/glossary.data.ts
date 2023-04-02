@@ -25,10 +25,12 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "apostrophe": group({}),            // '
                 "backtick": group({}),              // `
             })),
-            "StartCharacterType": type(taggedUnion({
+            "NonWrappedCharacterType": type(taggedUnion({
                 "solidus": group({}),               // /
 
-                "wrapper": ref(typeReference("StringWrapCharacter")),
+                "quotation mark": group({}),        // "
+                "apostrophe": group({}),            // '
+                "backtick": group({}),              // `
 
                 "exclamation mark": group({}),      // !
                 "vertical line": group({}),         // |
@@ -43,9 +45,9 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "open angle bracket": group({}),    // <
                 "close angle bracket": group({}),   // >
 
-                "whitespace": ref(typeReference("WhitespaceCharacter"))
+                "whitespace": group({}),
+                "other": group({}),
             })),
-            "PossibleStartCharacter": type(optional(ref(typeReference("StartCharacterType")))),
 
             "WhitespaceCharacter": type(taggedUnion({
                 "tab": group({}),                   // /t
@@ -116,7 +118,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         'interfaces': d({}),
         'algorithms': d({
             "GetCharacterPositionType": sfunction(typeReference("CharacterPositionType"), data(externalTypeReference("common", "Number"))),
-            "getStartCharacterType": sfunction(typeReference("PossibleStartCharacterType"), data(externalTypeReference("common", "Number"))),
+            "GetNonWrappedCharacterType": sfunction(typeReference("NonWrappedCharacterType"), data(externalTypeReference("common", "Number"))),
+
+            "IsHexadecimal": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
+            "IsAsterisk": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
 
             // "GetStartCharacter": sfunction(typeReference("PossibleStartCharacter"), data(externalTypeReference("common", "Number"))),
             // "GetWhitespaceCharacter": sfunction(typeReference("PossibleWhitespaceCharacter"), data(externalTypeReference("common", "Number"))),

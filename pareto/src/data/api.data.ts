@@ -7,8 +7,10 @@ const d = pd.d
 
 export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
+        "isAsterisk": algorithm(sfunction("this", {}, "IsAsterisk")),
+        "isHexadecimal": algorithm(sfunction("this", {}, "IsHexadecimal")),
         "getCharacterPositionType": algorithm(sfunction("this", {}, "GetCharacterPositionType")),
-        "getStartCharacterType": algorithm(sfunction("this", {}, "GetStartCharacterType")),
+        "getNonWrappedCharacterType": algorithm(sfunction("this", {}, "GetNonWrappedCharacterType")),
 
         "createStringSplitter": algorithm(constructor("this", {}, "CreateStringSplitter")),
         "createStringFromCharactersBuilder": algorithm(constructor("this", {}, "CreateStringFromCharactersBuilder")),

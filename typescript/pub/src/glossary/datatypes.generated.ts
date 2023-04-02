@@ -31,21 +31,15 @@ export namespace T {
         | ['other', null]
         | ['tab', null]
     
-    export namespace PossibleStartCharacter {
+    export namespace NonWrappedCharacterType {
         
-        export type O = T.StartCharacter
-    }
-    
-    export type PossibleStartCharacter = [ false ] | [ true, T.StartCharacter]
-    
-    export namespace PossibleWhitespaceCharacter {
+        export namespace apostrophe {}
         
-        export type O = T.WhitespaceCharacter
-    }
-    
-    export type PossibleWhitespaceCharacter = [ false ] | [ true, T.WhitespaceCharacter]
-    
-    export namespace StartCharacter {
+        export type apostrophe = null
+        
+        export namespace backtick {}
+        
+        export type backtick = null
         
         export namespace close__angle__bracket {}
         
@@ -91,6 +85,14 @@ export namespace T {
         
         export type open__parenthesis = null
         
+        export namespace other {}
+        
+        export type other = null
+        
+        export namespace quotation__mark {}
+        
+        export type quotation__mark = null
+        
         export namespace solidus {}
         
         export type solidus = null
@@ -99,12 +101,14 @@ export namespace T {
         
         export type vertical__line = null
         
-        export type whitespace = T.WhitespaceCharacter
+        export namespace whitespace {}
         
-        export type wrapper = T.StringWrapCharacter
+        export type whitespace = null
     }
     
-    export type StartCharacter = 
+    export type NonWrappedCharacterType = 
+        | ['apostrophe', null]
+        | ['backtick', null]
         | ['close angle bracket', null]
         | ['close brace', null]
         | ['close bracket', null]
@@ -116,10 +120,18 @@ export namespace T {
         | ['open brace', null]
         | ['open bracket', null]
         | ['open parenthesis', null]
+        | ['other', null]
+        | ['quotation mark', null]
         | ['solidus', null]
         | ['vertical line', null]
-        | ['whitespace', T.WhitespaceCharacter]
-        | ['wrapper', T.StringWrapCharacter]
+        | ['whitespace', null]
+    
+    export namespace PossibleWhitespaceCharacter {
+        
+        export type O = T.WhitespaceCharacter
+    }
+    
+    export type PossibleWhitespaceCharacter = [ false ] | [ true, T.WhitespaceCharacter]
     
     export namespace StringWrapCharacter {
         

@@ -47,32 +47,12 @@ export namespace SYNC {
         
         
         export namespace F {
-            export type GetCommentCharacter = ($: g_common.T.Number) => T.CommentCharacter
-        }
-        
-        
-        export namespace F {
-            export type GetNonWrappedCharacterType = ($: g_common.T.Number) => T.NonWrappedCharacterType
-        }
-        
-        
-        export namespace F {
-            export type GetPossibleNewlineCharacter = ($: g_common.T.Number) => T.PossibleNewlineCharacter
-        }
-        
-        
-        export namespace F {
             export type GetPossibleSymbol = ($: g_common.T.Number) => T.PossibleSymbol
         }
         
         
         export namespace F {
             export type IsHexadecimal = ($: g_common.T.Number) => g_common.T.Boolean
-        }
-        
-        
-        export namespace F {
-            export type IsTab = ($: g_common.T.Number) => g_common.T.Boolean
         }
     }
 }

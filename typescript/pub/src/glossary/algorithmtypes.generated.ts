@@ -25,7 +25,7 @@ export namespace ASYNC {
         export namespace C {
             export type CreateStringFromCharactersBuilder = {
                 'construct': ($is: {
-                    readonly 'handler': g_common.ASYNC.I.String
+                    readonly 'handler': g_common.ASYNC.I.StringStream
                 }) => ASYNC.I.CharacterStreamConsumer
             }
         }

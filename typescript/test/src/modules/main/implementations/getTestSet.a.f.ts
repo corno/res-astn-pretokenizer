@@ -11,48 +11,16 @@ import * as g_pub from "../../../../../pub"
 import * as g_test from "lib-pareto-test"
 
 export const $$: A.getTestSet = ($) => {
-
-    // pl.logDebugMessage(`TD> ${$.testDirectory}`)
-
-    // mfsLib.f_createReadDirectoryOrAbort({
-    //     onError: ($) => {
-
-    //     },
-    //     readDirectory: mfs.f_readDirectory
-    // })({
-    //     path: [$.testDirectory, "errors"],
-    // })._execute(($) => {
-    //     $.forEach(() => true, ($, key) => {
-    //         pl.logDebugMessage(key)
-    //     })
-    // })
-    // // fs.f_readDirectory({
-    // //     path: [ $.testDirectory, "errors" ],
-    // // })._execute(($) => {
-
-    // // })
-
-    // const pt = pub.$a.createPretokenizer(
-    //     {
-    //         consumer: ($) => {
-
-    //         },
-    //         onError: ($) => {
-
-    //         },
-    //         toArrayOfCharacters: ($) => {
-    //             pl.panic("!!!")
-    //         }
-    //     }
-    // )
-
-    // pt("FOO")
-
     const csc = g_pub.$r.createStringFromCharactersBuilder({
         'maximum string length': [true, 3]
     }).construct({
-        'handler': ($) => {
-            pd.logDebugMessage($)
+        'handler': {
+            'data': ($) => {
+                pd.logDebugMessage($)
+            },
+            'end': () => {
+                pd.logDebugMessage("END")
+            }
         }
     })
 

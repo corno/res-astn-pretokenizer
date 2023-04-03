@@ -64,7 +64,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "handler": aInterfaceReference("CharacterStreamConsumer")
             }),
             "CreateStringFromCharactersBuilder": constructor(aInterfaceReference("CharacterStreamConsumer"), {
-                "handler": aExternalInterfaceReference("common", "String")
+                "handler": aExternalInterfaceReference("common", "StringStream")
             }),
         }),
     },

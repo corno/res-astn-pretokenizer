@@ -4,11 +4,6 @@ import { A } from "../api.generated"
 export const $$: A.getPossibleSymbol = () => {
     return ($) => {
         switch ($) {
-            case 0x09: return [true, ['tab', null]]
-            case 0x0A: return [true, ['line feed', null]]
-            case 0x0D: return [true, ['carriage return', null]]
-            case 0x0D: return [true, ['tab', null]]
-            case 0x20: return [true, ['space', null]]
             case 0x21: return [true, ['exclamation mark', null]]
             case 0x22: return [true, ['quotation mark', null]]
             case 0x27: return [true, ['apostrophe', null]]

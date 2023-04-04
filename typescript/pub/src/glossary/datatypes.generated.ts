@@ -13,6 +13,13 @@ export namespace T {
     
     export type PossibleSymbol = [ false ] | [ true, T.SymbolType]
     
+    export namespace PossibleWhitespace {
+        
+        export type O = T.WhitespaceType
+    }
+    
+    export type PossibleWhitespace = [ false ] | [ true, T.WhitespaceType]
+    
     export namespace StringBuilderConfiguration {
         
         export namespace maximum__string__length {
@@ -40,10 +47,6 @@ export namespace T {
         export namespace backtick {}
         
         export type backtick = null
-        
-        export namespace carriage__return {}
-        
-        export type carriage__return = null
         
         export namespace close__angle__bracket {}
         
@@ -73,10 +76,6 @@ export namespace T {
         
         export type exclamation__mark = null
         
-        export namespace line__feed {}
-        
-        export type line__feed = null
-        
         export namespace open__angle__bracket {}
         
         export type open__angle__bracket = null
@@ -105,14 +104,6 @@ export namespace T {
         
         export type solidus = null
         
-        export namespace space {}
-        
-        export type space = null
-        
-        export namespace tab {}
-        
-        export type tab = null
-        
         export namespace vertical__line {}
         
         export type vertical__line = null
@@ -122,7 +113,6 @@ export namespace T {
         | ['apostrophe', null]
         | ['asterisk', null]
         | ['backtick', null]
-        | ['carriage return', null]
         | ['close angle bracket', null]
         | ['close brace', null]
         | ['close bracket', null]
@@ -130,7 +120,6 @@ export namespace T {
         | ['colon', null]
         | ['comma', null]
         | ['exclamation mark', null]
-        | ['line feed', null]
         | ['open angle bracket', null]
         | ['open brace', null]
         | ['open bracket', null]
@@ -138,7 +127,30 @@ export namespace T {
         | ['quotation mark', null]
         | ['reverse solidus', null]
         | ['solidus', null]
+        | ['vertical line', null]
+    
+    export namespace WhitespaceType {
+        
+        export namespace carriage__return {}
+        
+        export type carriage__return = null
+        
+        export namespace line__feed {}
+        
+        export type line__feed = null
+        
+        export namespace space {}
+        
+        export type space = null
+        
+        export namespace tab {}
+        
+        export type tab = null
+    }
+    
+    export type WhitespaceType = 
+        | ['carriage return', null]
+        | ['line feed', null]
         | ['space', null]
         | ['tab', null]
-        | ['vertical line', null]
 }

@@ -52,6 +52,11 @@ export namespace SYNC {
         
         
         export namespace F {
+            export type GetPossibleWhitespace = ($: g_common.T.Number) => T.PossibleWhitespace
+        }
+        
+        
+        export namespace F {
             export type IsHexadecimal = ($: g_common.T.Number) => g_common.T.Boolean
         }
     }

@@ -18,11 +18,16 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'root': {
         'namespaces': d({}),
         'types': d({
+            "WhitespaceType": type(taggedUnion({
+                "carriage return": group({}),       // \r
+                "line feed": group({}),             // \n
+                "tab": group({}),                   // \t
+                "space": group({}),                 //
+            })),
             "SymbolType": type(taggedUnion({
                 "apostrophe": group({}),            // '
                 "asterisk": group({}),              // *
                 "backtick": group({}),              // `
-                "carriage return": group({}),       // \r
                 "close angle bracket": group({}),   // >
                 "close brace": group({}),           // }
                 "close bracket": group({}),         // ]
@@ -30,7 +35,6 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "colon": group({}),                 // :
                 "comma": group({}),                 // ,
                 "exclamation mark": group({}),      // !
-                "line feed": group({}),             // \n
                 "open angle bracket": group({}),    // <
                 "open brace": group({}),            // {
                 "open bracket": group({}),          // [
@@ -38,11 +42,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "quotation mark": group({}),        // "
                 "reverse solidus": group({}),       // \
                 "solidus": group({}),               // /
-                "space": group({}),                 //
-                "tab": group({}),                   // \t
                 "vertical line": group({}),         // |
             })),
             "PossibleSymbol": type(optional(ref(typeReference("SymbolType")))),
+            "PossibleWhitespace": type(optional(ref(typeReference("WhitespaceType")))),
             "StringBuilderConfiguration": type(group({
                 "maximum string length": member(optional(number())),
             }))
@@ -72,6 +75,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         'interfaces': d({}),
         'algorithms': d({
             "GetPossibleSymbol": sfunction(typeReference("PossibleSymbol"), data(externalTypeReference("common", "Number"))),
+            "GetPossibleWhitespace": sfunction(typeReference("PossibleWhitespace"), data(externalTypeReference("common", "Number"))),
             "IsHexadecimal": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
         }),
     },

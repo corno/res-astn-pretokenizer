@@ -131,13 +131,20 @@ export namespace T {
     
     export namespace WhitespaceType {
         
-        export namespace carriage__return {}
+        export namespace newline {
+            
+            export namespace carriage__return {}
+            
+            export type carriage__return = null
+            
+            export namespace line__feed {}
+            
+            export type line__feed = null
+        }
         
-        export type carriage__return = null
-        
-        export namespace line__feed {}
-        
-        export type line__feed = null
+        export type newline = 
+            | ['carriage return', null]
+            | ['line feed', null]
         
         export namespace space {}
         
@@ -149,8 +156,10 @@ export namespace T {
     }
     
     export type WhitespaceType = 
-        | ['carriage return', null]
-        | ['line feed', null]
+        | ['newline', 
+            | ['carriage return', null]
+            | ['line feed', null]
+        ]
         | ['space', null]
         | ['tab', null]
 }

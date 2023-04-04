@@ -19,8 +19,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         'namespaces': d({}),
         'types': d({
             "WhitespaceType": type(taggedUnion({
-                "carriage return": group({}),       // \r
-                "line feed": group({}),             // \n
+                "newline": taggedUnion({
+                    "carriage return": group({}),   // \r
+                    "line feed": group({}),         // \n
+                }),
                 "tab": group({}),                   // \t
                 "space": group({}),                 //
             })),

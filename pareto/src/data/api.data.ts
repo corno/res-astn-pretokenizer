@@ -7,7 +7,7 @@ const d = pd.d
 
 export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
-        "isHexadecimal": algorithm(sfunction("this", {}, "IsHexadecimal")),
+        "isHexadecimalCharacter": algorithm(sfunction("this", {}, "IsHexadecimalCharacter")),
         "getPossibleSymbol": algorithm(sfunction("this", {}, "GetPossibleSymbol")),
         "getPossibleWhitespace": algorithm(sfunction("this", {}, "GetPossibleWhitespace")),
         "createStringSplitter": algorithm(constructor("this", {}, "CreateStringSplitter")),

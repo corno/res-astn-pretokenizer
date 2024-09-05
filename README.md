@@ -2,7 +2,7 @@ this resource contains the lowlevel functionality for tokenization that cannot b
 
 It contains these functions:
 
-* isHexadecimal
+* isHexadecimalCharacter
 * getPossibleSymbol
 * getPossibleWhitespace
 * createStringSplitter

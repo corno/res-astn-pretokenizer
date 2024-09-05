@@ -57,7 +57,7 @@ export namespace SYNC {
         
         
         export namespace F {
-            export type IsHexadecimal = ($: g_common.T.Number) => g_common.T.Boolean
+            export type IsHexadecimalCharacter = ($: g_common.T.Number) => g_common.T.Boolean
         }
     }
 }

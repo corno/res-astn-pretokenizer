@@ -78,7 +78,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         'algorithms': d({
             "GetPossibleSymbol": sfunction(typeReference("PossibleSymbol"), data(externalTypeReference("common", "Number"))),
             "GetPossibleWhitespace": sfunction(typeReference("PossibleWhitespace"), data(externalTypeReference("common", "Number"))),
-            "IsHexadecimal": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
+            "IsHexadecimalCharacter": sfunction(externalTypeReference("common", "Boolean"), data(externalTypeReference("common", "Number"))),
         }),
     },
 }

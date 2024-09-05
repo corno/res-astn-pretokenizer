@@ -1,7 +1,7 @@
 
 import { A } from "../api.generated"
 
-export const $$: A.isHexadecimal = () => {
+export const $$: A.isHexadecimalCharacter = () => {
     return ($) => {
         if ($ >= 0x30 && $ <= 0x39) { // 0-9
             return true

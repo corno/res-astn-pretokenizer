@@ -20,7 +20,7 @@ export namespace A {
     
     export type getPossibleWhitespace = () => g_this.SYNC.A.F.GetPossibleWhitespace
     
-    export type isHexadecimal = () => g_this.SYNC.A.F.IsHexadecimal
+    export type isHexadecimalCharacter = () => g_this.SYNC.A.F.IsHexadecimalCharacter
 }
 
 export type API = {
@@ -28,5 +28,5 @@ export type API = {
     readonly 'createStringSplitter': A.createStringSplitter
     readonly 'getPossibleSymbol': A.getPossibleSymbol
     readonly 'getPossibleWhitespace': A.getPossibleWhitespace
-    readonly 'isHexadecimal': A.isHexadecimal
+    readonly 'isHexadecimalCharacter': A.isHexadecimalCharacter
 }
